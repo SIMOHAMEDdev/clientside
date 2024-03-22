@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Angkor&display=swap');
+
 .container {
     /* background-color: rgb(90, 109, 126); */
     /* width: fit-content; */
@@ -28,13 +30,20 @@
     border-radius: 50%;
     display: flex;
     align-items: center;
+    justify-content: center;
+    font-size: 35px;
+    font-family: "Angkor";
+    cursor: pointer;
+    /* font-weight: 100; */
+    /* font-style: normal; */
 }
 .first_level {
-    height: 8pc;
-    width: 8pc;
-    /* position: relative; */
+    height: 4pc;
+    width: 4pc;
+    position: relative;
     /* left: 11.5pc; */
-    top: 2px;
+    top: 1px;
+    border: 1pc solid;
     /* display: block;
     margin-left: auto;
     margin-right: auto; */
@@ -61,46 +70,93 @@
 /* ________________________________________________ */
 .main_page {
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.roadmap {
+    display: flex;
     flex-direction: column;
     align-items: center;
+    width: 25pc;
 }
 .right_holder {
     display: flex;
     position: relative;
-    left: 5.5pc;
+    left: 4.5pc;
 }
 .left_holder {
     display: flex;
     position: relative;
-    right: 5.5pc;
+    right: 4.5pc;
 }
 .second_level {
-    height: 8pc;
-    width: 8pc;
+    height: 4pc;
+    width: 4pc;
+    border: 1pc solid;
     position: relative;
-    top: 5pc;
+    top: 4.5pc;
     right: 2px;
 }
 .third_level {
-    height: 8pc;
-    width: 8pc;
+    height: 4pc;
+    width: 4pc;
+    border: 1pc solid;
     position: relative;
-    top: 5pc;
+    top: 4.5pc;
     left: 2px;
 }
 .arrow_right {
     /* background-color: aqua; */
-    height: 9pc;
+    height: 7pc;
     width: 3pc;
-    border-left: 1pc solid;
-    border-bottom: 1pc solid;
+    border-left: 1pc solid aqua;
+    border-bottom: 1pc solid aqua;
 }
 .arrow_left {
-    height: 9pc;
+    height: 7pc;
     width: 3pc;
     border-right: 1pc solid;
     border-bottom: 1pc solid;
 }
-.left_holder {
+/* _________________________________________________ */
+.levelstate {
+    width: 25pc;
+    height: 100vh;
+    background-color: aqua;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+section {
+    display: flex;
+    flex-direction: column;
+}
+label {
+    font-size: 25px;
+    font: 800;
+    margin-bottom: 30px;
+}
+.progress_bar{
+    width: 21pc;
+    height: 10px;
+    background-color: bisque;
+    border-radius: 5px;
+}
+
+.progress {
+    height: 100%;
+    /* width: 14pc; */
+    background-color: rgb(36, 96, 148);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    transition: width 1s ease-in-out;
+}
+.progress.animated {
+    animation: moveProgressBar 1s ease-in-out; /* Define animation */
+}
+
+@keyframes moveProgressBar {
+    from { width: 0 }
+    to { width: 21pc }
 }

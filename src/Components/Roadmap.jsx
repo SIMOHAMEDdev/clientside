@@ -1,36 +1,32 @@
-import React from 'react'
+import { useState } from 'react';
+import LevelState from '../Components/LevelState'
 
 const Roadmap = () => {
+    const [levels, setLevels] = useState([2, 3, 4, 5])
   return (
     <div className='main_page'>
-        <div className="level first_level"></div>
-        {/* <div className='container'>
-            <div className='map_levels'>
-                <div className='level left_levels'><div className='line left_line'/></div>
-                <div className='level left_levels'><div className='line left_line'/></div>
+        <div className='roadmap'>
+            <div className="level first_level">
+                <p>1</p>
             </div>
-            <div className='map_line'></div>
-            <div className='map_levels'>
-                <div className='level right_levels'><div className='line right_line'/></div>
-                <div className='level right_levels'><div className='line right_line'/></div>
-            </div>
-        </div> */}
-        <div className="holder right_holder">
-            <div className="arrow_right"></div>
-            <div className="level second_level"></div>
+            {levels.map((num, index) => 
+                num % 2 === 0 ?
+                    <div className="holder right_holder" key={index}>
+                        <div className="arrow_right"></div>
+                        <div className="level second_level">
+                            <p>{num}</p>
+                        </div>
+                    </div> 
+                    :
+                    <div className="holder left_holder" key={index}> 
+                        <div className="level third_level">
+                        <p>{num}</p>
+                        </div>
+                        <div className="arrow_left"></div>
+                    </div>
+            )}
         </div>
-        <div className="holder left_holder">
-            <div className="level third_level"></div>
-            <div className="arrow_left"></div>
-        </div>
-        <div className="holder right_holder">
-            <div className="arrow_right"></div>
-            <div className="level second_level"></div>
-        </div>
-        <div className="holder left_holder">
-            <div className="level third_level"></div>
-            <div className="arrow_left"></div>
-        </div>
+        <LevelState />
     </div>
   )
 }
