@@ -32,12 +32,12 @@
 .first_level {
     height: 8pc;
     width: 8pc;
-    position: relative;
+    /* position: relative; */
     /* left: 11.5pc; */
     top: 2px;
-    display: block;
+    /* display: block;
     margin-left: auto;
-    margin-right: auto;
+    margin-right: auto; */
 }
 .left_levels {
     position: relative;
@@ -56,4 +56,51 @@
 .left_line {
     position: relative;
     left: 8pc;
+}
+
+/* ________________________________________________ */
+.main_page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.right_holder {
+    display: flex;
+    position: relative;
+    left: 5.5pc;
+}
+.left_holder {
+    display: flex;
+    position: relative;
+    right: 5.5pc;
+}
+.second_level {
+    height: 8pc;
+    width: 8pc;
+    position: relative;
+    top: 5pc;
+    right: 2px;
+}
+.third_level {
+    height: 8pc;
+    width: 8pc;
+    position: relative;
+    top: 5pc;
+    left: 2px;
+}
+.arrow_right {
+    /* background-color: aqua; */
+    height: 9pc;
+    width: 3pc;
+    border-left: 1pc solid;
+    border-bottom: 1pc solid;
+}
+.arrow_left {
+    height: 9pc;
+    width: 3pc;
+    border-right: 1pc solid;
+    border-bottom: 1pc solid;
+}
+.left_holder {
+    display: flex;
 }
