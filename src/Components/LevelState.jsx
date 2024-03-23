@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import Data from "../Data.json"
 import { HiPlay } from "react-icons/hi2";
+import { useNavigate } from 'react-router-dom';
 
 const LevelState = ({ active, level }) => {
+  const navigate = useNavigate()
 
     const data = Data
   return (
@@ -10,11 +12,10 @@ const LevelState = ({ active, level }) => {
         <h1>Level {level}:</h1><br />
         <section>
             {Object.keys(data).map((key)=>{
-                  console.log(parseInt(key), parseInt(level))
                 if(parseInt(key) === parseInt(level)){
                   return Object.keys(data[key]).map((lesson, index)=>{
-                  return (<div className='fadeInDown'>
-                  <label key={index} className='lesson fadeInDown'>{lesson}: <HiPlay className='play_btn'/></label>
+                  return (<div className='fadeInDown'  key={index}>
+                  <label className='lesson fadeInDown'>{lesson}: <HiPlay onClick={()=>{navigate("/roadmap/learning")}} className='play_btn'/></label>
                     <p className='fadeInDown'
                     style={{fontSize: "20px", margin: "10px 0", display: "flex", alignItems: "center", justifyContent:"space-between"}}
                     >{data[key][lesson].title} <span>{data[key][lesson].progress}</span></p>
