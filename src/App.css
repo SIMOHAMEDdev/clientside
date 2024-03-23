@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Angkor&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
 
 .container {
     /* background-color: rgb(90, 109, 126); */
@@ -122,7 +123,6 @@
 }
 /* _________________________________________________ */
 .levelstate {
-    /* width: 25pc; */
     width: 0;
     visibility: hidden;
     height: 100vh;
@@ -133,17 +133,35 @@
     transition: width 2s;
 }
 .active {
-    visibility: visible;
     width: 25pc;
+    visibility: visible;
 }
 section {
     display: flex;
     flex-direction: column;
+    gap: 30px;
 }
 label {
     font-size: 25px;
     font: 800;
-    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    /* margin-bottom: 30px; */
+}
+.play_btn {
+    text-align: center;
+    border-radius: 50%;
+    font-size: 14px;
+    padding: 5px;
+    border: 2px solid black;
+    background-color: black;
+    color: aliceblue;
+    cursor: pointer;
+    transition: 1s;
+}
+.play_btn:hover {
+    background-color: aliceblue;
+    color: black;
 }
 .progress_bar{
     width: 21pc;
@@ -161,6 +179,15 @@ label {
 }
 .progress.animated {
     animation: moveProgressBar 1s ease-in-out; /* Define animation */
+}
+/* .lesson {
+    animation-duration: 1s;
+    transition: 1s;
+} */
+.fadeInDown {
+    animation-duration: 2s;
+    transition: 2s;
+    animation-name: fadeInDown;
 }
 
 /* @keyframes moveProgressBar {
