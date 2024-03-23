@@ -73,6 +73,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    z-index: 2;
 }
 .roadmap {
     display: flex;
@@ -121,12 +122,19 @@
 }
 /* _________________________________________________ */
 .levelstate {
-    width: 25pc;
+    /* width: 25pc; */
+    width: 0;
+    visibility: hidden;
     height: 100vh;
     background-color: aqua;
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: width 2s;
+}
+.active {
+    visibility: visible;
+    width: 25pc;
 }
 section {
     display: flex;
@@ -148,15 +156,14 @@ label {
     height: 100%;
     /* width: 14pc; */
     background-color: rgb(36, 96, 148);
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-radius: 5px;
     transition: width 1s ease-in-out;
 }
 .progress.animated {
     animation: moveProgressBar 1s ease-in-out; /* Define animation */
 }
 
-@keyframes moveProgressBar {
+/* @keyframes moveProgressBar {
     from { width: 0 }
     to { width: 21pc }
-}
+} */

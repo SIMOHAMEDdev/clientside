@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
 import Data from "../Data.json"
 
-const LevelState = () => {
+const LevelState = ({ active, level }) => {
     const [width1, setWidth1] = useState("7pc")
     const [width2, setWidth2] = useState("14pc")
     const [width3, setWidth3] = useState("21pc")
 
     const data = Data.level1
   return (
-    <div className='levelstate'>
-        <h1>Level State:</h1>
+    <div className={active ? 'levelstate active' : 'levelstate'}>
+        <h1>Level {level}:</h1>
         <section>
             
             {/* <label>Lesson 2:
