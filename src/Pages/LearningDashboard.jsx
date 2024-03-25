@@ -79,7 +79,7 @@ const LearningDashboard = () => {
   }
 
   return (
-    <div>
+    <div style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
         {
           <div className='game_template'>
             <div className='img_comtainer'>
