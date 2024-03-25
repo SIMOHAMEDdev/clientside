@@ -1,1 +1,35 @@
-[{'image_path': '"./sign_alphabet/1.png"', 'letter': 'ا', 'status': False}, {'image_path': '"./sign_alphabet/2.png"', 'letter': 'ب', 'status': False}, {'image_path': '"./sign_alphabet/3.png"', 'letter': 'ت', 'status': False}, {'image_path': '"./sign_alphabet/4.png"', 'letter': 'ث', 'status': False}, {'image_path': '"./sign_alphabet/5.png"', 'letter': 'ج', 'status': False}, {'image_path': '"./sign_alphabet/6.png"', 'letter': 'ح', 'status': False}, {'image_path': '"./sign_alphabet/7.png"', 'letter': 'خ', 'status': False}, {'image_path': '"./sign_alphabet/8.png"', 'letter': 'د', 'status': False}, {'image_path': '"./sign_alphabet/9.png"', 'letter': 'ذ', 'status': False}, {'image_path': '"./sign_alphabet/10.png"', 'letter': 'ر', 'status': False}, {'image_path': '"./sign_alphabet/11.png"', 'letter': 'ز', 'status': False}, {'image_path': '"./sign_alphabet/12.png"', 'letter': 'س', 'status': False}, {'image_path': '"./sign_alphabet/13.png"', 'letter': 'ش', 'status': False}, {'image_path': '"./sign_alphabet/14.png"', 'letter': 'ص', 'status': False}, {'image_path': '"./sign_alphabet/15.png"', 'letter': 'ض', 'status': False}, {'image_path': '"./sign_alphabet/16.png"', 'letter': 'ط', 'status': False}, {'image_path': '"./sign_alphabet/17.png"', 'letter': 'ظ', 'status': False}, {'image_path': '"./sign_alphabet/18.png"', 'letter': 'ع', 'status': False}, {'image_path': '"./sign_alphabet/19.png"', 'letter': 'غ', 'status': False}, {'image_path': '"./sign_alphabet/20.png"', 'letter': 'ف', 'status': False}, {'image_path': '"./sign_alphabet/21.png"', 'letter': 'ق', 'status': False}, {'image_path': '"./sign_alphabet/22.png"', 'letter': 'ك', 'status': False}, {'image_path': '"./sign_alphabet/23.png"', 'letter': 'ل', 'status': False}, {'image_path': '"./sign_alphabet/24.png"', 'letter': 'م', 'status': False}, {'image_path': '"./sign_alphabet/25.png"', 'letter': 'ن', 'status': False}, {'image_path': '"./sign_alphabet/26.png"', 'letter': 'ه', 'status': False}, {'image_path': '"./sign_alphabet/27.png"', 'letter': 'و', 'status': False}, {'image_path': '"./sign_alphabet/28.png"', 'letter': 'ي', 'status': False}]
+[
+    [
+         {"lesson": 1, "image_path": "sign_alphabet/1.png", "letter": "ا", "status": false, "id": 1}, 
+         {"lesson": 1, "image_path": "sign_alphabet/2.png", "letter": "ب", "status": false, "id": 2}, 
+         {"lesson": 1, "image_path": "sign_alphabet/3.png", "letter": "ت", "status": false, "id": 3}, 
+         {"lesson": 1, "image_path": "sign_alphabet/4.png", "letter": "ث", "status": false, "id": 4}, 
+         {"lesson": 1, "image_path": "sign_alphabet/5.png", "letter": "ج", "status": false, "id": 5}, 
+         {"lesson": 1, "image_path": "sign_alphabet/6.png", "letter": "ح", "status": false, "id": 6}, 
+         {"lesson": 1, "image_path": "sign_alphabet/7.png", "letter": "خ", "status": false, "id": 7}, 
+         {"lesson": 1, "image_path": "sign_alphabet/8.png", "letter": "د", "status": false, "id": 8}, 
+         {"lesson": 1, "image_path": "sign_alphabet/9.png", "letter": "ذ", "status": false, "id": 9}, 
+         {"lesson": 1, "image_path": "sign_alphabet/10.png", "letter": "ر", "status": false, "id": 10}
+     ], 
+     [
+         {"lesson": 2, "image_path": "sign_alphabet/11.png", "letter": "ز", "status": false, "id": 11}, 
+         {"lesson": 2, "image_path": "sign_alphabet/12.png", "letter": "س", "status": false, "id": 12}, 
+         {"lesson": 2, "image_path": "sign_alphabet/13.png", "letter": "ش", "status": false, "id": 13}, 
+         {"lesson": 2, "image_path": "sign_alphabet/14.png", "letter": "ص", "status": false, "id": 14}, 
+         {"lesson": 2, "image_path": "sign_alphabet/15.png", "letter": "ض", "status": false, "id": 15}, 
+         {"lesson": 2, "image_path": "sign_alphabet/16.png", "letter": "ط", "status": false, "id": 16}, 
+         {"lesson": 2, "image_path": "sign_alphabet/17.png", "letter": "ظ", "status": false, "id": 17}, 
+         {"lesson": 2, "image_path": "sign_alphabet/18.png", "letter": "ع", "status": false, "id": 18}, 
+         {"lesson": 2, "image_path": "sign_alphabet/19.png", "letter": "غ", "status": false, "id": 19}, 
+         {"lesson": 2, "image_path": "sign_alphabet/20.png", "letter": "ف", "status": false, "id": 20}
+     ],   [
+         {"lesson": 3, "image_path": "sign_alphabet/21.png", "letter": "ق", "status": false, "id": 21}, 
+         {"lesson": 3, "image_path": "sign_alphabet/22.png", "letter": "ك", "status": false, "id": 22}, 
+         {"lesson": 3, "image_path": "sign_alphabet/23.png", "letter": "ل", "status": false, "id": 23}, 
+         {"lesson": 3, "image_path": "sign_alphabet/24.png", "letter": "م", "status": false, "id": 24}, 
+         {"lesson": 3, "image_path": "sign_alphabet/25.png", "letter": "ن", "status": false, "id": 25}, 
+         {"lesson": 3, "image_path": "sign_alphabet/26.png", "letter": "ه", "status": false, "id": 26},
+         {"lesson": 3, "image_path": "sign_alphabet/27.png", "letter": "و", "status": false, "id": 27}, 
+         {"lesson": 3, "image_path": "sign_alphabet/28.png", "letter": "ي", "status": false, "id": 28}
+     ]
+ ]

@@ -2,12 +2,17 @@
     "١": {
         ":الدرس ١": {
             "title": "تعلم ١٠ حروف",
-            "progress": "3/3",
+            "progress": "10/10",
             "width_progress": "21pc"
         },
-        ":الدرس ٢": {
+        ":الدرس ٣": {
             "title": "تعلم ١٠ حروف",
-            "progress": "2/3",
+            "progress": "7/10",
+            "width_progress": "14pc"
+        },
+        ":الدرس ٢": {
+            "title": "تعلم ٨ حروف",
+            "progress": "5/8",
             "width_progress": "14pc"
         },
         ": اختبار ": {
@@ -19,12 +24,12 @@
     "٢": {
         ":الدرس ١": {
             "title": "تعلم الأرقام الفردية",
-            "progress": "0/3",
+            "progress": "0/9",
             "width_progress": "0"
         },
         ":الدرس ٢": {
             "title": "تعلم الأرقام المركبة",
-            "progress": "0/3",
+            "progress": "0/10",
             "width_progress": "0"
         },
         ": اختبار ": {
@@ -35,13 +40,13 @@
     },
     "٣": {
         ":الدرس ١": {
-            "title": "تعلم ١٠ حروف",
-            "progress": "0/3",
+            "title": "تعلم ١٠ كلمات",
+            "progress": "0/10",
             "width_progress": "0"
         },
         ":الدرس ٢": {
-            "title": "تعلم ١٠ حروف",
-            "progress": "0/3",
+            "title": "تعلم ١٠ كلمات",
+            "progress": "0/10",
             "width_progress": "0"
         },
         ": اختبار ": {
