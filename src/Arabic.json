@@ -1,85 +1,51 @@
 {
-    "1": {
-        "الدرس ١": {
-            "title": "Learning Some Alphabet",
+    "١": {
+        ":الدرس ١": {
+            "title": "تعلم ١٠ حروف",
             "progress": "3/3",
             "width_progress": "21pc"
         },
-        "الدرس ٦": {
-            "title": "Learning Some Words",
+        ":الدرس ٢": {
+            "title": "تعلم ١٠ حروف",
             "progress": "2/3",
             "width_progress": "14pc"
         },
-        "اختبار ": {
-            "title": "Testing Your Knowledge",
+        ": اختبار ": {
+            "title": "اختبر معرفتك",
             "progress": "1/3",
             "width_progress": "7pc"
         }
     },
-    "2": {
-        "Lesson 1": {
-            "title": "Learning Some Alphabet",
+    "٢": {
+        ":الدرس ١": {
+            "title": "تعلم الأرقام الفردية",
             "progress": "0/3",
             "width_progress": "0"
         },
-        "Lesson 2": {
-            "title": "Learning Some Words",
+        ":الدرس ٢": {
+            "title": "تعلم الأرقام المركبة",
             "progress": "0/3",
             "width_progress": "0"
         },
-        "Test ": {
-            "title": "Testing Your Knowledge",
+        ": اختبار ": {
+            "title": "اختبر معرفتك",
             "progress": "0/3",
             "width_progress": "0"
         }
     },
-    "3": {
-        "Lesson 1": {
-            "title": "Learning Some Alphabet",
+    "٣": {
+        ":الدرس ١": {
+            "title": "تعلم ١٠ حروف",
             "progress": "0/3",
             "width_progress": "0"
         },
-        "Lesson 2": {
-            "title": "Learning Some Words",
+        ":الدرس ٢": {
+            "title": "تعلم ١٠ حروف",
             "progress": "0/3",
             "width_progress": "0"
         },
-        "Test ": {
-            "title": "Testing Your Knowledge",
-            "progress": "0/3",
-            "width_progress": "0"
-        }
-    },
-    "4": {
-        "Lesson 1": {
-            "title": "Learning Some Alphabet",
-            "progress": "0/3",
-            "width_progress": "0"
-        },
-        "Lesson 2": {
-            "title": "Learning Some Words",
-            "progress": "0/3",
-            "width_progress": "0"
-        },
-        "Test ": {
-            "title": "Testing Your Knowledge",
-            "progress": "0/3",
-            "width_progress": "0"
-        }
-    },
-    "5": {
-        "Lesson 1": {
-            "title": "Learning Some Alphabet",
-            "progress": "0/3",
-            "width_progress": "0"
-        },
-        "Lesson 2": {
-            "title": "Learning Some Words",
-            "progress": "0/3",
-            "width_progress": "0"
-        },
-        "Test ": {
-            "title": "Testing Your Knowledge",
+        ": اختبار ": {
+            "title": "اختبر معرفتك",
             "progress": "0/3",
             "width_progress": "0"
         }
