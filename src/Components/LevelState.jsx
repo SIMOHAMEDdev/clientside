@@ -15,7 +15,7 @@ const LevelState = ({ active, level }) => {
                 if(key === level){
                   return Object.keys(data[key]).map((lesson, index)=>{
                   return (<div className='fadeInDown'  key={index}>
-                  <label className='lesson fadeInDown'>{lesson} <HiPlay onClick={()=>{navigate("/roadmap/learning")}} className='play_btn'/></label>
+                  <label className='lesson fadeInDown'>{lesson} <HiPlay onClick={()=>{navigate(`/roadmap/learning/${data[key][lesson].type}/${data[key][lesson].lesson}`)}} className='play_btn'/></label>
                     <p className='fadeInDown'
                     style={{fontSize: "20px", margin: "10px 0", display: "flex", alignItems: "center", justifyContent:"space-between"}}
                     >{data[key][lesson].title} <span>{data[key][lesson].progress}</span></p>

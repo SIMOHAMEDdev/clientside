@@ -11,7 +11,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Router>
       <Routes>
         <Route path='/roadmap'  element={<Stages />} />
-        <Route path='/roadmap/learning'  element={<LearningDashboard />} />
+        <Route path='/roadmap/learning/:type/:lesson'  element={<LearningDashboard />} />
         <Route path='/'  element={<App />} />
       </Routes>
     </Router>

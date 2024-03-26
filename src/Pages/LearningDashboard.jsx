@@ -7,10 +7,10 @@ const LearningDashboard = () => {
   const arr = ['ا', 'ب', 'ت', 'ث', 'ج', 'ح', 'خ', 'د', 'ذ', 'ر', 'ز', 'س', 'ش', 'ص', 'ض', 
   'ط', 'ظ', 'ع', 'غ', 'ف', 'ق', 'ك', 'ل', 'م', 'ن', 'ه', 'و', 'ي']
   const [currentLetterIndex, setCurrentLetterIndex] = useState(0);
-  const [lesson, setLesson] = useState(1)
+  // const [lesson, setLesson] = useState(1)
+  const {type, lesson} = useParams()
   const currentLetter= data[lesson - 1][currentLetterIndex];
   const [image, setImage] = useState("../sign_alphabet/1.png")
-  // const image = require("../sign_alphabet/1.png")
   const [isCorrect, setIsCorrect] = useState("")
   const [wrong, setWrong] = useState(null)
   const [correct, setCorrect] = useState(null)
@@ -52,6 +52,7 @@ const LearningDashboard = () => {
   }, [lesson, currentLetterIndex]);
 
   useEffect(()=>{
+    // console.log(lesson)
     if(next){
       setTimeout(async ()=>{
         await setCorrect(null)
@@ -80,21 +81,20 @@ const LearningDashboard = () => {
 
   return (
     <div style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
-        {
-          <div className='game_template'>
-            <div className='img_comtainer'>
-              <img src={`/${currentLetter.image_path}`} alt="" className='sign_img'/>
-            </div>
-            {/* <img src={image} alt="" /> */}
-            <section className='ul_choices'>
-              {letters && letters.map((letter, index)=>(
-                  <p className={correct === index ? 'choise correct' : wrong === index ? 'choise wrong' : 'choise'} key={index}
-                  onClick={(e)=>{checkResponse(e, currentLetter.letter, index, letters.indexOf(currentLetter.letter))}}
-                  >{letter}</p>
-              ))}
-            </section>
-          </div>
-        }
+        {type === 'letter' && (
+              <div className='game_template'>
+                <div className='img_comtainer'>
+                  <img src={`/${currentLetter.image_path}`} alt="" className='sign_img'/>
+                </div>
+                <section className='ul_choices'>
+                  {letters && letters.map((letter, index)=>(
+                      <p className={correct === index ? 'choise correct' : wrong === index ? 'choise wrong' : 'choise'} key={index}
+                      onClick={(e)=>{checkResponse(e, currentLetter.letter, index, letters.indexOf(currentLetter.letter))}}
+                      >{letter}</p>
+                  ))}
+                </section>
+              </div>
+            )}
     </div>
   )
 }

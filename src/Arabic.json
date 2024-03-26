@@ -3,56 +3,76 @@
         ":الدرس ١": {
             "title": "تعلم ١٠ حروف",
             "progress": "10/10",
-            "width_progress": "21pc"
+            "width_progress": "21pc",
+            "lesson": "1",
+            "type": "letter"
         },
         ":الدرس ٣": {
             "title": "تعلم ١٠ حروف",
             "progress": "7/10",
-            "width_progress": "14pc"
+            "width_progress": "14pc",
+            "lesson": "2",
+            "type": "letter"
         },
         ":الدرس ٢": {
             "title": "تعلم ٨ حروف",
             "progress": "5/8",
-            "width_progress": "14pc"
+            "width_progress": "14pc",
+            "lesson": "3",
+            "type": "letter"
         },
         ": اختبار ": {
             "title": "اختبر معرفتك",
             "progress": "1/3",
-            "width_progress": "7pc"
+            "width_progress": "7pc",
+            "lesson": "4",
+            "type": "letter"
         }
     },
     "٢": {
         ":الدرس ١": {
             "title": "تعلم الأرقام الفردية",
             "progress": "0/9",
-            "width_progress": "0"
+            "width_progress": "0",
+            "lesson": "1",
+            "type": "number"
         },
         ":الدرس ٢": {
             "title": "تعلم الأرقام المركبة",
             "progress": "0/10",
-            "width_progress": "0"
+            "width_progress": "0",
+            "lesson": "2",
+            "type": "number"
         },
         ": اختبار ": {
             "title": "اختبر معرفتك",
             "progress": "0/3",
-            "width_progress": "0"
+            "width_progress": "0",
+            "lesson": "3",
+            "type": "number"
         }
     },
     "٣": {
         ":الدرس ١": {
             "title": "تعلم ١٠ كلمات",
             "progress": "0/10",
-            "width_progress": "0"
+            "width_progress": "0",
+            "lesson": "1",
+            "type": "word"
         },
         ":الدرس ٢": {
             "title": "تعلم ١٠ كلمات",
             "progress": "0/10",
-            "width_progress": "0"
+            "width_progress": "0",
+            "lesson": "2",
+            "type": "word"
         },
         ": اختبار ": {
             "title": "اختبر معرفتك",
             "progress": "0/3",
-            "width_progress": "0"
+            "width_progress": "0",
+            "lesson": "3",
+            "type": "word"
         }
     }
 }
