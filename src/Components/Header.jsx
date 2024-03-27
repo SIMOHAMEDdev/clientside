@@ -1,16 +1,25 @@
-import React from 'react'
+import React, {useState} from 'react'
 import logo from '../assets/logo.png'
+import { Link } from 'react-router-dom'
 
-const Header = () => {
+const Header = ({route}) => {
+    const home = route === "/"
+    const about = route === "/about"
+    const goals = route === "/goals"
+    const faqs = route === "/faqs"
+    
   return (
-    <div>
-        <img src={logo} alt="" style={{height: "3pc"}}/>
-        <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Goals</li>
-            <li>Quotes</li>
-        </ul>
+    <div className='header'>
+        <div className='side1'>
+            <img src={logo} alt="" className='logo'/>
+            <ul className='ul_header'>
+                <Link style={{textDecoration: "none", color: "rgb(21, 21, 21)"}} to={"/"}><li className={home ? 'li activated' : 'li'}>الرئيسية</li></Link>
+                <Link style={{textDecoration: "none", color: "rgb(21, 21, 21)"}} to={"/about"}><li className={about ? 'li activated' : 'li'}>نبذة عنا</li></Link>
+                <Link style={{textDecoration: "none", color: "rgb(21, 21, 21)"}} to={"/goals"}><li className={goals ? 'li activated' : 'li'}>الأهداف</li></Link>
+                <Link style={{textDecoration: "none", color: "rgb(21, 21, 21)"}} to={"/faqs"}><li className={faqs ? 'li activated' : 'li'}>FAQs</li></Link>
+            </ul>
+        </div>
+        <button className='play_now'>Play Now</button>
     </div>
   )
 }
