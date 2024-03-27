@@ -1,0 +1,12 @@
+﻿lesson,image_path,number,status,id
+1,"""./numbers/0.png""",0,FALSE,1
+1,"""./numbers/1.png""",1,FALSE,2
+1,"""./numbers/2.png""",2,FALSE,3
+1,"""./numbers/3.png""",3,FALSE,4
+1,"""./numbers/4.png""",4,FALSE,5
+1,"""./numbers/5.png""",5,FALSE,6
+1,"""./numbers/6.png""",6,FALSE,7
+1,"""./numbers/7.png""",7,FALSE,8
+1,"""./numbers/8.png""",8,FALSE,9
+1,"""./numbers/9.png""",9,FALSE,10
+1,"""./numbers/10.png""",10,FALSE,11
