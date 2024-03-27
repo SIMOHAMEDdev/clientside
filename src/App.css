@@ -502,3 +502,18 @@ ul {
 /* .transition {
     transition: (-200px)
 } */
+/* ________________________________________________ */
+.choose_btn {
+    font-size: 30px;
+    text-align: center;
+    font-weight: 800;
+    border:  2px solid;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.ul_choices1 {
+    display: flex;
+    flex-direction: column;
+    font-size: 60px;
+}

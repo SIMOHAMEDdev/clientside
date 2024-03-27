@@ -1,9 +1,8 @@
 import pandas
-
-data = pandas.read_csv("questions.csv")
-data_dicts = data.to_dict(orient="records")
+import json
 
 numbers_data = pandas.read_csv("numbers.csv")
 numbers_dicts = numbers_data.to_dict(orient="records")
 
-print(numbers_dicts)
+with open("numbers.json", "w") as json_file:
+    json.dump(numbers_dicts, json_file)

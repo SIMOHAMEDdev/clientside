@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
+import Numbers from '../Components/Numbers'
 import data from "../data/data.json"
 
 const LearningDashboard = () => {
@@ -10,7 +11,6 @@ const LearningDashboard = () => {
   // const [lesson, setLesson] = useState(1)
   const {type, lesson} = useParams()
   const currentLetter= data[lesson - 1][currentLetterIndex];
-  const [image, setImage] = useState("../sign_alphabet/1.png")
   const [isCorrect, setIsCorrect] = useState("")
   const [wrong, setWrong] = useState(null)
   const [correct, setCorrect] = useState(null)
@@ -43,8 +43,6 @@ const LearningDashboard = () => {
   useEffect(() => {
     if (currentLetter && !currentLetter.status) {
       generateOptions(currentLetter.letter, arr);
-    } else {
-      setCurrentLetterIndex(currentLetterIndex + 1);
     }
     if(currentLetterIndex === 9){
       navigate('/roadmap')
@@ -94,7 +92,8 @@ const LearningDashboard = () => {
                   ))}
                 </section>
               </div>
-            )}
+        )}
+        {type === "number" && <Numbers lesson={lesson}/>}
     </div>
   )
 }
