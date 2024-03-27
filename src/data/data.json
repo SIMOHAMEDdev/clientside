@@ -1,6 +1,6 @@
 [
     [
-         {"lesson": 1, "image_path": "sign_alphabet/1.png", "letter": "ا", "status": false, "id": 1}, 
+         {"lesson": 1, "image_path": "sign_alphabet/1.png", "letter": "أ", "status": false, "id": 1}, 
          {"lesson": 1, "image_path": "sign_alphabet/2.png", "letter": "ب", "status": false, "id": 2}, 
          {"lesson": 1, "image_path": "sign_alphabet/3.png", "letter": "ت", "status": false, "id": 3}, 
          {"lesson": 1, "image_path": "sign_alphabet/4.png", "letter": "ث", "status": false, "id": 4}, 

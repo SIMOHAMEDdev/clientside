@@ -12,7 +12,7 @@ const FAQs = () => {
             <div className="faqs">
                 <h1 style={{fontSize: "30px", margin: "0"}}>
                     :الأسئلة</h1>
-                <p style={{fontSize: "25px"}}>فيما يلي بعض الأسئلة التي قد تكون 
+                <p style={{fontSize: "15px"}}>فيما يلي بعض الأسئلة التي قد تكون 
                 لديكم حول منصتنا وخدماتنا</p>
                 <div className="questions">
                     <div className="question">

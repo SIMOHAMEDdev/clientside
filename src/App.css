@@ -213,13 +213,19 @@ label {
 }
 .choise {
     width: 60px;
-    border: 3px solid;
+    border: 3px solid #F28705;
     text-align: center;
     padding: 10px 20px;
     font-size: 26px;
     border-radius: 30px;
     cursor: pointer;
+    background-color: #F28705;
+    color: #fff;
     transition: 1s;
+}
+.choise:hover {
+    background-color: #fff;
+    color: #F28705;
 }
 .choise.correct {
     border: 3px solid greenyellow;
@@ -265,12 +271,15 @@ label {
     justify-content: space-between;
     align-items: center;
     color: rgb(21, 21, 21);
+    font-family: "Noto Kufi Arabic", sans-serif;
+    font-optical-sizing: auto;
 }
 .logo {
     height: 3pc;
     position: relative;
     top: 10px;
     left: 3px;
+    cursor: pointer;
 }
 .side1 {
     display: flex;
@@ -325,6 +334,8 @@ ul {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: "Noto Kufi Arabic", sans-serif;
+    font-optical-sizing: auto;
     /* font-family: "Noto Kufi Arabic", sans-serif; */
 }
 .section1 {
@@ -426,22 +437,22 @@ ul {
 }
 .about_us {
     /* background-color: rgb(161, 191, 218); */
-    font-size: 22px;
+    font-size: 18px;
     color: #141414;
 }
 .about_text {
-    width: 26pc;
+    width: 30pc;
     text-align: end;
     position: relative;
-    right: 1pc;
+    right: 5pc;
 }
 .quote1 {
     width: 15pc;
     text-align: center;
     color: #fff;
     background-color: #F28705;
-    font-size: 20px;
-    padding: 40px 20px;
+    font-size: 18px;
+    padding: 10px 20px;
     border-radius: 25px;
     font-weight: 600;
 }
@@ -450,13 +461,15 @@ ul {
     width: 1250px;
     text-align: center;
     height: 85vh;
+    font-family: "Noto Kufi Arabic", sans-serif;
+    font-optical-sizing: auto;
     /* display: flex; */
     /* flex-direction: column; */
 }
 .goals_cont {
     height: 55vh;
     display: grid;
-    gap: 12.5px;
+    gap: 10px;
     grid-template-columns: 240px 240px 240px 240px 240px;
 }
 .goal {
@@ -468,8 +481,9 @@ ul {
     padding: 15px 15px 0 15px;
 }
 .goal_desc {
-    font-size: 20px;
+    font-size: 13.6px;
     text-align: center;
+    margin: 0;
 }
 .goal_icon {
     background-color: #fff;
@@ -479,11 +493,14 @@ ul {
 }
 .goal_img {
     height: 40px;
-    padding: 15px;
+    padding: 20px;
 }
 /* _________________________________________________ */
 .faqs {
+    font-family: "Noto Kufi Arabic", sans-serif;
+    font-optical-sizing: auto;
     text-align: center;
+    transition: 1s;
 }
 .question {
     width: 1000px;
@@ -493,7 +510,7 @@ ul {
     text-align: end;
     padding: 0 20px;
     color: #fff;
-    font-size: 20px;
+    font-size: 18px;
 }
 .question_icon {
     transition: 1s;
@@ -527,4 +544,19 @@ ul {
     text-align: center;
     color: #fff;
     /* margin: 10px 0 0 0; */
+}
+.section {
+    display: grid;
+}
+/* _________________________________________ */
+.login-cont, .register-cont {
+    background-color: #F28705;
+    padding: 50px 100px;
+    color: #fff;
+    border-radius: 30px;
+}
+.login-form {
+    display: flex;
+    flex-direction: column;
+    /* gap: 5px; */
 }

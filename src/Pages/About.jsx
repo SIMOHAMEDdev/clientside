@@ -6,7 +6,6 @@ import Section from '../Section'
 const About = () => {
   return (
     <div className='container'>
-      <div>
         <Header route={'/about'}/>
         <Section>
           <div className="_container">
@@ -39,7 +38,6 @@ const About = () => {
             </div>
           </div>
         </Section>
-      </div>
     </div>
   )
 }

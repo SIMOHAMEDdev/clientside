@@ -19,12 +19,12 @@ const Home = () => {
             <div className="part1">
                 <h1 style={{position: "relative", left: "30pc",fontSize:"60px", width: "fit-content",
                 margin: '0 0 0 0'}}>إكتشف </h1>
-                <h1 style={{fontSize:"60px", position: "relative", left: "28pc", width: "fit-content",
+                <h1 style={{fontSize:"60px", position: "relative", left: "28.5pc", width: "fit-content",
                 margin: '-45px 0 0 0'}}>أين </h1>
-                <h1 style={{position: "relative", left: "7pc",fontSize:"60px", width: "fit-content",
-                margin: '-45px 0 0 0'}}>المتعة تلتقي </h1>
-                <h1 style={{position: "relative", left: "0",fontSize:"60px", width: "fit-content",
-                margin: '-35px 0 0 0'}}>بالتعلم</h1>
+                <h1 style={{position: "relative", left: "11pc",fontSize:"60px", width: "fit-content",
+                margin: '-45px 0 0 0'}}>التعلم يلتقي </h1>
+                <h1 style={{position: "relative", left: "1pc",fontSize:"60px", width: "fit-content",
+                margin: '-35px 0 0 0'}}>بالمتعة</h1>
             </div>
             
             <div className="part2">
@@ -34,7 +34,7 @@ const Home = () => {
                     <img src={icon} alt="" />
                 </div>
                 {/* <p>Learn Sign Language while playing games and having fun</p> */}
-                <p style={{position: "relative", left: "14.8pc", width: "14pc", textAlign: 'end'}}>استكشف عالم لغة الإشارة من خلال الألعاب
+                <p style={{position: "relative", left: "14.8pc", width: "15pc", textAlign: 'end'}}>استكشف عالم لغة الإشارة من خلال الألعاب
                 والمستويات المصممة لتعزيز مهاراتك أثناء <br />. الاستمتاع بالرحلة</p>
             </div>
         </div>

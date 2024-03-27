@@ -5,7 +5,7 @@ import data from "../data/data.json"
 
 const LearningDashboard = () => {
   const [letters, setLetters] = useState([])
-  const arr = ['ا', 'ب', 'ت', 'ث', 'ج', 'ح', 'خ', 'د', 'ذ', 'ر', 'ز', 'س', 'ش', 'ص', 'ض', 
+  const arr = ['أ', 'ب', 'ت', 'ث', 'ج', 'ح', 'خ', 'د', 'ذ', 'ر', 'ز', 'س', 'ش', 'ص', 'ض', 
   'ط', 'ظ', 'ع', 'غ', 'ف', 'ق', 'ك', 'ل', 'م', 'ن', 'ه', 'و', 'ي']
   const [currentLetterIndex, setCurrentLetterIndex] = useState(0);
   // const [lesson, setLesson] = useState(1)
