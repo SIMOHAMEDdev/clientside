@@ -235,9 +235,9 @@ label {
     top: 20px;
 }
 .game_template {
-    background-color: antiquewhite;
-    width: 30pc;
-    height: 20pc;
+    background-color: rgb(21, 21, 21);
+    width: 35pc;
+    height: 25pc;
     padding: 40px 60px;
     display: flex;
     flex-direction: column;
@@ -249,9 +249,10 @@ label {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #fff;
+    /* gap: 30px; */
     height: 12pc;
     width: 12pc;
-    background-color: rgb(179, 179, 162);
     border-radius: 50%;
     overflow: hidden;
 }
@@ -505,15 +506,25 @@ ul {
 /* ________________________________________________ */
 .choose_btn {
     font-size: 30px;
-    text-align: center;
     font-weight: 800;
     border:  2px solid;
     padding: 15px;
     border-radius: 50%;
     cursor: pointer;
+    background-color: #F28705;
+    color: #fff;
+    border: 2px solid #F28705;
+    transition: 1s;
+}
+.choose_btn:hover {
+    background-color: #fff;
+    color: #F28705;
 }
 .ul_choices1 {
     display: flex;
     flex-direction: column;
-    font-size: 60px;
+    font-size: 100px;
+    text-align: center;
+    color: #fff;
+    /* margin: 10px 0 0 0; */
 }

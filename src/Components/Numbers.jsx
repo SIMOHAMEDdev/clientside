@@ -10,6 +10,7 @@ const Numbers = ({lesson}) => {
     const [wrong, setWrong] = useState(null)
     const [correct, setCorrect] = useState(null)
     const [next, setNext] = useState(false)
+    const [clicked, setClicked] = useState(null)
   
 
     // function generateOptions(correctAnswer, allAnswers) {
@@ -46,29 +47,35 @@ const Numbers = ({lesson}) => {
       useEffect(()=>{
         // console.log(lesson)
         if(next){
-          setTimeout(async ()=>{
-            await setCorrect(null)
-            await setWrong(null)
+        //   setTimeout(async ()=>{
+            setCorrect(null)
+            setWrong(null)
             setCurrentLetterIndex(currentLetterIndex + 1);
             setNext(false)
-          }, 2000)
+        //   }, 1500)
         }
       }, [lesson, currentLetterIndex, next])
     
-      const checkResponse = (e, answer, index, answerIndex)=> {
-        const value = e.target.textContent
-        if(value === answer){
+      const checkResponse = (clicked, answer)=> {
+        if(clicked === answer){
           console.log("Correct!")
-          setIsCorrect(true)
-          setCorrect(index)
+          alert("Thats right the answer is: " + currentLetter.number)
           setNext(true)
-        }else{
+        }else if(clicked !== answer){
           console.log("Wrong!")
-          setIsCorrect(false)
-          setWrong(index)
-          setCorrect(answerIndex)
+          alert("the answer is: " + currentLetter.number)
           setNext(true)
         }
+        // if(value === answer){
+        //   setIsCorrect(true)
+        //   setCorrect(index)
+        //   setNext(true)
+        // }else{
+        //   setIsCorrect(false)
+        //   setWrong(index)
+        //   setCorrect(answerIndex)
+        //   setNext(true)
+        // }
       }
   return (
     <div className='game_template'>
@@ -82,9 +89,11 @@ const Numbers = ({lesson}) => {
                   >{letter}</p>
               ))} */}
                 <h6  style={{margin: "0"}}>{currentLetter.choise}</h6>
-                <div>
-                    <IoClose className='choose_btn'/>
-                    <IoCheckmark className='choose_btn'/>
+                <div style={{display: "flex", gap: '30px'}}>
+                    <IoClose className='choose_btn' onClick={()=>{setClicked(false)
+                    checkResponse(false, currentLetter.isCorrect)}} />
+                    <IoCheckmark className='choose_btn' onClick={()=>{setClicked(true)
+                    checkResponse(true, currentLetter.isCorrect)}} />
                 </div>
             </section>
     </div>
