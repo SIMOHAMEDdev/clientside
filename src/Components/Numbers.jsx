@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import numbers from '../data/numbers.json'
 import { IoClose, IoCheckmark } from "react-icons/io5";
-import Video from '../Video';
+import Video from '../VideoComponent.jsx';
 import { useNavigate } from 'react-router-dom';
 
 const Numbers = ({lesson}) => {
