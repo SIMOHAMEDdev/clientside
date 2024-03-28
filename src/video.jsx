@@ -1,7 +1,6 @@
 import React, { useState, useRef } from 'react';
-import video from './assets/video.mp4';
 
-const video = () => {
+const Video = ({video}) => {
   const [playing, setPlaying] = useState(false);
   const videoRef = useRef(null);
 
@@ -26,21 +25,20 @@ const video = () => {
   };
 
   return (
-    <div>
+    <div className='video_container'>
         <video
         src={video}
         ref={videoRef}
         onClick={handleVideoClick}
         onPause={() => setPlaying(false)}
         onPlay={() => setPlaying(true)}
-        width={"500"}
+        // width={"500"}
+        className='video'
         muted
       />
-      {!playing && (
-        <button onClick={handleReplay}>Play</button>
-      )}
+        <button onClick={!playing ? handleReplay : null }>Play</button>
     </div>
   )
 }
 
-export default video
+export default Video

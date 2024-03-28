@@ -1,9 +1,11 @@
 import React from 'react'
 import Roadmap from '../Components/Roadmap'
+import Sidebar from '../Components/Sidebar'
 
 const Stages = () => {
   return (
-    <div>
+    <div className='stages'>
+        <Sidebar route={'/roadmap'}/>
         <Roadmap />
     </div>
   )

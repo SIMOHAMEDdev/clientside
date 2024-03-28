@@ -39,14 +39,14 @@
         },
         ":الدرس ٢": {
             "title": "تعلم الأرقام المركبة",
-            "progress": "0/10",
+            "progress": "0/17",
             "width_progress": "0",
             "lesson": "2",
             "type": "number"
         },
-        ": اختبار ": {
-            "title": "اختبر معرفتك",
-            "progress": "0/3",
+        ":الدرس ٣ ": {
+            "title": "تعلم الأرقام المركبة",
+            "progress": "0/14",
             "width_progress": "0",
             "lesson": "3",
             "type": "number"

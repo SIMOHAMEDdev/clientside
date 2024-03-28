@@ -44,14 +44,14 @@ const LearningDashboard = () => {
     if (currentLetter && !currentLetter.status) {
       generateOptions(currentLetter.letter, arr);
     }
-    if(currentLetterIndex === 9){
-      navigate('/roadmap')
-    }
   }, [lesson, currentLetterIndex]);
 
   useEffect(()=>{
     // console.log(lesson)
     if(next){
+      if(currentLetterIndex === data[lesson - 1].length - 1){
+        navigate('/roadmap')
+      }
       setTimeout(async ()=>{
         await setCorrect(null)
         await setWrong(null)

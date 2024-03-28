@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import numbers from '../data/numbers.json'
 import { IoClose, IoCheckmark } from "react-icons/io5";
-
+import Video from '../Video';
+import { useNavigate } from 'react-router-dom';
 
 const Numbers = ({lesson}) => {
     const [letters, setLetters] = useState([])
@@ -11,6 +12,7 @@ const Numbers = ({lesson}) => {
     const [correct, setCorrect] = useState(null)
     const [next, setNext] = useState(false)
     const [clicked, setClicked] = useState(null)
+    const navigate = useNavigate()
   
 
     // function generateOptions(correctAnswer, allAnswers) {
@@ -35,18 +37,14 @@ const Numbers = ({lesson}) => {
     //     setLetters(randomOptions)
     //   }
     
-      useEffect(() => {
-        // if (currentLetter && !currentLetter.status) {
-        //   generateOptions(currentLetter.letter, arr);
-        // } 
-        if(currentLetterIndex === 10){
-          navigate('/roadmap')
-        }
-      }, [lesson, currentLetterIndex]);
+      
     
       useEffect(()=>{
         // console.log(lesson)
         if(next){
+          if(currentLetterIndex === numbers[lesson - 1].length - 1){
+            navigate('/roadmap')
+          }
         //   setTimeout(async ()=>{
             setCorrect(null)
             setWrong(null)
@@ -55,6 +53,16 @@ const Numbers = ({lesson}) => {
         //   }, 1500)
         }
       }, [lesson, currentLetterIndex, next])
+
+      useEffect(() => {
+        // if (currentLetter && !currentLetter.status) {
+        //   generateOptions(currentLetter.letter, arr);
+        // } 
+        if(currentLetterIndex === numbers[lesson - 1].length){
+          navigate('/roadmap')
+        }
+        console.log(numbers[lesson - 1].length)
+      }, [lesson, currentLetterIndex]);
     
       const checkResponse = (clicked, answer)=> {
         if(clicked === answer){
@@ -79,15 +87,10 @@ const Numbers = ({lesson}) => {
       }
   return (
     <div className='game_template'>
-            <div className='img_comtainer'>
+            {lesson < 2 ? <div className='img_comtainer'>
               <img src={`${currentLetter.image_path}`} alt="" className='sign_img'/>
-            </div>
+            </div> : <Video video={currentLetter.image_path}/>}
             <section className='ul_choices1'>
-              {/* {letters && letters.map((letter, index)=>(
-                  <p className={correct === index ? 'choise correct' : wrong === index ? 'choise wrong' : 'choise'} key={index}
-                  onClick={(e)=>{checkResponse(e, currentLetter.letter, index, letters.indexOf(currentLetter.letter))}}
-                  >{letter}</p>
-              ))} */}
                 <h6  style={{margin: "0"}}>{currentLetter.choise}</h6>
                 <div style={{display: "flex", gap: '30px'}}>
                     <IoClose className='choose_btn' onClick={()=>{setClicked(false)
