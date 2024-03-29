@@ -9,12 +9,13 @@ const ArticlesSide = ({route}) => {
     const navigate = useNavigate()
     
   return (
-    <div className='articles_side' >
-            <h1>Articles</h1>
-            <ul className='ul_header' style={{display: "flex", flexDirection: "column"}}>
-                <Link style={{textDecoration: "none", color: "rgb(21, 21, 21)"}}><li>Article 1</li></Link>
-                <Link style={{textDecoration: "none", color: "rgb(21, 21, 21)"}}><li>Article 2</li></Link>
-                <Link style={{textDecoration: "none", color: "rgb(21, 21, 21)"}}><li>Article 3</li></Link>
+    <div className='articles_side' dir='rtl'>
+            <h1 style={{marginRight: "25px"}}>المقالات</h1>
+            <ul className='ul_header' style={{display: "flex", flexDirection: "column",marginRight: "25px"}}>
+                <Link style={{textDecoration: "none", color: "rgb(21, 21, 21)"}}><li>أساسيات لغة الإشارة</li></Link>
+                <Link style={{textDecoration: "none", color: "rgb(21, 21, 21)"}}><li>تحديات أشخاص الصم والبكم</li></Link>
+                <Link style={{textDecoration: "none", color: "rgb(21, 21, 21)"}}><li>االتكنولوجيا و تقدم تعليم لغة الإشارة العربية</li></Link>
+                <Link style={{textDecoration: "none", color: "rgb(21, 21, 21)"}}><li>لغة الإشارية العربية بين الماضي والحاضر والمستقبل</li></Link>
             </ul>
     </div>
   )

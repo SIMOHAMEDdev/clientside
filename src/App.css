@@ -620,14 +620,20 @@ ul {
 .articles_side {
     height: 100vh;
     width: 25vw;
-    background-color: aquamarine;
+    background-color: #F28705;
+    color: #fff;
 }
 .articles_container {
     width: 100vw;
-    background-color: #9a8a77;
+    /* background-color: #9a8a77; */
     display: grid;
     grid-template-columns: 70.1vw 25vw;
 }
 .article_container {
+    height: 100vh;
     width: 70.1vw;
+    overflow: auto;
+}
+.article {
+    width: 96%;
 }

@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Sidebar = ({route}) => {
     const map = route === "/roadmap"
-    const learn = route === "/learn"
+    const learn = route === "/articles"
     const game = route === "/game"
     const navigate = useNavigate()
 
@@ -17,7 +17,7 @@ const Sidebar = ({route}) => {
         <div style={{textAlign: "center", display: "grid", gap: "30px"}}>
             <IoMap className={map? 'sidebar-icon currentPage' : 'sidebar-icon'} onClick={()=>{navigate("/roadmap")}}/>
             <FaBookReader className={learn? 'sidebar-icon currentPage' : 'sidebar-icon'} onClick={()=>{navigate("/articles")}}/>
-            <SiOpenvpn className={game? 'sidebar-icon currentPage' : 'sidebar-icon'}/>
+            {/* <SiOpenvpn className={game? 'sidebar-icon currentPage' : 'sidebar-icon'}/> */}
         </div>
         <IoLogOut className='sidebar-icon' style={{position: "relative", bottom: "15px"}}/>
     </div>

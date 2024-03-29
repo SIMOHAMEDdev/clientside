@@ -5,7 +5,7 @@ import ArticlesContainer from '../Components/ArticlesContainer'
 const Articles = () => {
   return (
     <div style={{display: 'flex'}}>
-        <Sidebar />
+        <Sidebar route={'/articles'}/>
         <ArticlesContainer />
     </div>
   )

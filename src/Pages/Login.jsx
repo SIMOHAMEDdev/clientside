@@ -16,7 +16,7 @@ const Login = () => {
   const sendInfo = async (e)=>{
     e.preventDefault()
     try {
-      let response = await axios.post('http://localhost:5000/user/login', {
+      let response = await axios.post('https://eshara-backaend.cyclic.app/user/login', {
         email: email,
         password: password
       })
