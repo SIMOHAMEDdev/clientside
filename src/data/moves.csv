@@ -1,51 +1,51 @@
-﻿lesson,image_path,move,status,id,isCorrect
-1,"""./moves_first/1.mp4""","""بسم الله الرحمن الرحيم""",FALSE,1,FALSE
-1,"""./moves_first/2.mp4""","""السلام عليكم""",FALSE,2,TRUE
-1,"""./moves_first/3.mp4""","""وعليكم السلام""",FALSE,3,TRUE
-1,"""./moves_first/4.mp4""","""صباح الخير""",FALSE,4,FALSE
-1,"""./moves_first/5.mp4""","""أهلا وسهلا""",FALSE,5,TRUE
-1,"""./moves_first/6.mp4""","""شكرا""",FALSE,6,TRUE
-1,"""./moves_first/7.mp4""","""ابدا""",FALSE,7,FALSE
-1,"""./moves_first/8.mp4""","""انا""",FALSE,8,FALSE
-1,"""./moves_first/9.mp4""","""انت""",FALSE,9,FALSE
-1,"""./moves_first/10.mp4""","""انتم""",FALSE,10,TRUE
-1,"""./moves_first/11.mp4""","""اسم""",FALSE,11,FALSE
-1,"""./moves_first/12.mp4""","""اسمي""",FALSE,12,TRUE
-1,"""./moves_first/13.mp4""","""اسمك""",FALSE,13,TRUE
-1,"""./moves_first/14.mp4""","""عمر""",FALSE,14,TRUE
-2,"""./moves_second/15.mp4""","""كم عمرك؟""",FALSE,15,FALSE
-2,"""./moves_second/16.mp4""","""كيف حالك؟""",FALSE,16,TRUE
-2,"""./moves_second/17.mp4""","""الحمدلله""",FALSE,17,FALSE
-2,"""./moves_second/18.mp4""","""مبسوط""",FALSE,18,FALSE
-2,"""./moves_second/19.mp4""","""غير مبسوط""",FALSE,19,FALSE
-2,"""./moves_second/20.mp4""","""حزين""",FALSE,20,FALSE
-2,"""./moves_second/21.mp4""","""عصبي""",FALSE,21,TRUE
-2,"""./moves_second/22.mp4""","""كيف الصحة؟""",FALSE,22,TRUE
-2,"""./moves_second/23.mp4""","""جيد""",FALSE,23,FALSE
-2,"""./moves_second/24.mp4""","""سيء""",FALSE,24,TRUE
-2,"""./moves_second/25.mp4""","""تعبان""",FALSE,25,FALSE
-2,"""./moves_second/26.mp4""","""مريض""",FALSE,26,FALSE
-2,"""./moves_second/27.mp4""","""نعم""",FALSE,27,FALSE
-2,"""./moves_second/28.mp4""","""لا""",FALSE,28,TRUE
-3,"""./moves_third/29.mp4""","""بابا""",FALSE,29,FALSE
-3,"""./moves_third/30.mp4""","""ماما""",FALSE,30,TRUE
-3,"""./moves_third/31.mp4""","""ولد""",FALSE,31,TRUE
-3,"""./moves_third/32.mp4""","""بنت""",FALSE,32,FALSE
-3,"""./moves_third/33.mp4""","""ولد صغير""",FALSE,33,FALSE
-3,"""./moves_third/34.mp4""","""بنت صغيرة""",FALSE,34,TRUE
-3,"""./moves_third/35.mp4""","""رجل""",FALSE,35,FALSE
-3,"""./moves_third/36.mp4""","""امرأة""",FALSE,36,TRUE
-3,"""./moves_third/37.mp4""","""ابن """,FALSE,37,TRUE
-3,"""./moves_third/38.mp4""","""ابنة""",FALSE,38,TRUE
-3,"""./moves_third/39.mp4""","""توأم""",FALSE,39,FALSE
-3,"""./moves_third/40.mp4""","""أخ""",FALSE,40,FALSE
-3,"""./moves_third/41.mp4""","""أخت""",FALSE,41,TRUE
-3,"""./moves_third/42.mp4""","""اخوة""",FALSE,42,FALSE
-3,"""./moves_third/43.mp4""","""جد""",FALSE,43,FALSE
-3,"""./moves_third/44.mp4""","""جدة""",FALSE,44,TRUE
-3,"""./moves_third/45.mp4""","""عائلة""",FALSE,45,FALSE
-3,"""./moves_third/46.mp4""","""أقارب""",FALSE,46,TRUE
-3,"""./moves_third/47.mp4""","""طفل رضيع""",FALSE,47,TRUE
-3,"""./moves_third/48.mp4""","""أولاد""",FALSE,48,TRUE
-3,"""./moves_third/49.mp4""","""بنات""",FALSE,49,FALSE
-3,"""./moves_third/50.mp4""","""صديق""",FALSE,50,TRUE
+﻿lesson,image_path,move,status,id,isCorrect,answer
+1,"""./moves_first/1.mp4""","""بسم الله الرحمن الرحيم""",FALSE,1,FALSE,"""بسم الله الرحمن الرحيم"""
+1,"""./moves_first/2.mp4""","""السلام عليكم""",FALSE,2,TRUE,
+1,"""./moves_first/3.mp4""","""وعليكم السلام""",FALSE,3,TRUE,
+1,"""./moves_first/4.mp4""","""صباح الخير""",FALSE,4,FALSE,"""صباح الخير"""
+1,"""./moves_first/5.mp4""","""أهلا وسهلا""",FALSE,5,TRUE,
+1,"""./moves_first/6.mp4""","""شكرا""",FALSE,6,TRUE,
+1,"""./moves_first/7.mp4""","""ابدا""",FALSE,7,FALSE,"""ابدا"""
+1,"""./moves_first/8.mp4""","""انا""",FALSE,8,FALSE,"""انا"""
+1,"""./moves_first/9.mp4""","""انت""",FALSE,9,FALSE,"""انت"""
+1,"""./moves_first/10.mp4""","""انتم""",FALSE,10,TRUE,
+1,"""./moves_first/11.mp4""","""اسم""",FALSE,11,FALSE,"""اسم"""
+1,"""./moves_first/12.mp4""","""اسمي""",FALSE,12,TRUE,
+1,"""./moves_first/13.mp4""","""اسمك""",FALSE,13,TRUE,
+1,"""./moves_first/14.mp4""","""عمر""",FALSE,14,TRUE,
+2,"""./moves_second/15.mp4""","""كم عمرك؟""",FALSE,15,FALSE,"""كم عمرك؟"""
+2,"""./moves_second/16.mp4""","""كيف حالك؟""",FALSE,16,TRUE,
+2,"""./moves_second/17.mp4""","""الحمدلله""",FALSE,17,FALSE,"""الحمدلله"""
+2,"""./moves_second/18.mp4""","""مبسوط""",FALSE,18,FALSE,"""مبسوط"""
+2,"""./moves_second/19.mp4""","""غير مبسوط""",FALSE,19,FALSE,"""غير مبسوط"""
+2,"""./moves_second/20.mp4""","""حزين""",FALSE,20,FALSE,"""حزين"""
+2,"""./moves_second/21.mp4""","""عصبي""",FALSE,21,TRUE,
+2,"""./moves_second/22.mp4""","""كيف الصحة؟""",FALSE,22,TRUE,
+2,"""./moves_second/23.mp4""","""جيد""",FALSE,23,FALSE,"""جيد"""
+2,"""./moves_second/24.mp4""","""سيء""",FALSE,24,TRUE,
+2,"""./moves_second/25.mp4""","""تعبان""",FALSE,25,FALSE,"""تعبان"""
+2,"""./moves_second/26.mp4""","""مريض""",FALSE,26,FALSE,"""مريض"""
+2,"""./moves_second/27.mp4""","""نعم""",FALSE,27,FALSE,"""نعم"""
+2,"""./moves_second/28.mp4""","""لا""",FALSE,28,TRUE,
+3,"""./moves_third/29.mp4""","""بابا""",FALSE,29,FALSE,"""بابا"""
+3,"""./moves_third/30.mp4""","""ماما""",FALSE,30,TRUE,
+3,"""./moves_third/31.mp4""","""ولد""",FALSE,31,TRUE,
+3,"""./moves_third/32.mp4""","""بنت""",FALSE,32,FALSE,"""بنت"""
+3,"""./moves_third/33.mp4""","""ولد صغير""",FALSE,33,FALSE,"""ولد صغير"""
+3,"""./moves_third/34.mp4""","""بنت صغيرة""",FALSE,34,TRUE,
+3,"""./moves_third/35.mp4""","""رجل""",FALSE,35,FALSE,"""رجل"""
+3,"""./moves_third/36.mp4""","""امرأة""",FALSE,36,TRUE,
+3,"""./moves_third/37.mp4""","""ابن """,FALSE,37,TRUE,
+3,"""./moves_third/38.mp4""","""ابنة""",FALSE,38,TRUE,
+3,"""./moves_third/39.mp4""","""توأم""",FALSE,39,FALSE,"""توأم"""
+3,"""./moves_third/40.mp4""","""أخ""",FALSE,40,FALSE,"""أخ"""
+3,"""./moves_third/41.mp4""","""أخت""",FALSE,41,TRUE,
+3,"""./moves_third/42.mp4""","""اخوة""",FALSE,42,FALSE,"""اخوة"""
+3,"""./moves_third/43.mp4""","""جد""",FALSE,43,FALSE,"""جد"""
+3,"""./moves_third/44.mp4""","""جدة""",FALSE,44,TRUE,
+3,"""./moves_third/45.mp4""","""عائلة""",FALSE,45,FALSE,"""عائلة"""
+3,"""./moves_third/46.mp4""","""أقارب""",FALSE,46,TRUE,
+3,"""./moves_third/47.mp4""","""طفل رضيع""",FALSE,47,TRUE,
+3,"""./moves_third/48.mp4""","""أولاد""",FALSE,48,TRUE,
+3,"""./moves_third/49.mp4""","""بنات""",FALSE,49,FALSE,"""بنات"""
+3,"""./moves_third/50.mp4""","""صديق""",FALSE,50,TRUE,
