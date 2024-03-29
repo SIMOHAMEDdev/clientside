@@ -19,7 +19,7 @@ const Register = () => {
   const sendInfos = async (e)=>{
     e.preventDefault()
     try {
-      const response = await axios.post('https://eshara-backaend.cyclic.app/user/register', {
+      const response = await axios.post('http://localhost:5000/user/register', {
         name: name,
         email : email,
         password : password,
@@ -53,6 +53,8 @@ const Register = () => {
             <form className='register-form' onSubmit={sendInfos}>
                 <label for="name">Name:</label><br />
                 <input type="text" name="name" id="name" 
+                style={{width: "15pc", padding: "20px 20px", borderRadius: "40px",
+                border: "2px solid #fff", margin: "-10px 0 20px 0"}}
                 value={name}
                 onChange={(e)=>setName(e.target.value)}
                 className='name-form' required/><br />
@@ -60,13 +62,19 @@ const Register = () => {
                 <input type="email" name="email" id="email" 
                 value={email}
                 onChange={(e)=>setEmail(e.target.value)}
+                style={{width: "15pc", padding: "20px 20px", borderRadius: "40px",
+                border: "2px solid #fff", margin: "-10px 0 20px 0"}}
                 className='email-form' required/><br />
                 <label for="password">Password:</label><br />
                 <input type="password" name="password" id="password" 
                 value={password}
                 onChange={(e)=>setPassword(e.target.value)}
+                style={{width: "15pc", padding: "20px 20px", borderRadius: "40px",
+             border: "2px solid #fff", margin: "-10px 0 20px 0"}}
                 className='psw-form' required/><br />
-                <button type='submit' className='login-btn'>Sign Up</button>
+                <button type='submit' className='login-btn action_btn'
+                style={{padding: "10px 0", borderRadius: "25px", border: "2px solid #fff",
+                cursor: "pointer", width: "18pc", marginTop: "20px"}}>Sign Up</button>
             </form>
         </div>
     </div>

@@ -16,7 +16,7 @@ const Login = () => {
   const sendInfo = async (e)=>{
     e.preventDefault()
     try {
-      let response = await axios.post('https://eshara-backaend.cyclic.app/user/login', {
+      let response = await axios.post('http://localhost:5000/user/login', {
         email: email,
         password: password
       })
@@ -50,6 +50,8 @@ const Login = () => {
             id="email" 
             value={email} 
             className='email-form'
+            style={{width: "15pc", padding: "20px 20px", borderRadius: "40px",
+             border: "2px solid #fff"}}
             onChange={(e)=>setEmail(e.target.value)}
             required/><br />
             <label for="password" style={{margin: "0"}}>Password:</label><br />
@@ -58,9 +60,13 @@ const Login = () => {
             id="password" 
             value={password} 
             className='psw-form' 
+            style={{width: "15pc", padding: "20px 20px", borderRadius: "40px",
+             border: "2px solid #fff"}}
             onChange={(e)=>setPassword(e.target.value)}
             required/><br />
-            <button type='submit' className='login-btn'>Login</button>
+            <button type='submit' className='login-btn action_btn'
+            style={{padding: "10px 0", borderRadius: "25px", border: "2px solid #fff",
+             cursor: "pointer"}}>Login</button>
         </form>
         <Link to='/register'>Register</Link>
     </div>

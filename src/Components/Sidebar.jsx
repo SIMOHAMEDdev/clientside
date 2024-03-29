@@ -11,6 +11,12 @@ const Sidebar = ({route}) => {
     const game = route === "/game"
     const navigate = useNavigate()
 
+    const logout = ()=>{
+      localStorage.removeItem('token')
+      localStorage.removeItem('user_id')
+      navigate('/login')
+  }
+
   return (
     <div className='sidebar'>
         <img src={logo} alt="" className='side_logo'/>
@@ -19,7 +25,7 @@ const Sidebar = ({route}) => {
             <FaBookReader className={learn? 'sidebar-icon currentPage' : 'sidebar-icon'} onClick={()=>{navigate("/articles")}}/>
             {/* <SiOpenvpn className={game? 'sidebar-icon currentPage' : 'sidebar-icon'}/> */}
         </div>
-        <IoLogOut className='sidebar-icon' style={{position: "relative", bottom: "15px"}}/>
+        <IoLogOut className='sidebar-icon' style={{position: "relative", bottom: "15px"}} onClick={logout}/>
     </div>
   )
 }

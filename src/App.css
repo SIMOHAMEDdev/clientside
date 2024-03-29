@@ -637,3 +637,6 @@ ul {
 .article {
     width: 96%;
 }
+.action_btn:hover {
+    border: 2px solid #F28705;
+}

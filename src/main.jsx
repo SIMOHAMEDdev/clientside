@@ -23,14 +23,14 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path='/goals' element={<Goals />} />
         <Route path='/FAQs' element={<FAQs />} />
         <Route path='/articles' element={<Articles />} />
-        {/* <Route path='/' element={<ProtectedRoute />}> */}
+        <Route path='/' element={<ProtectedRoute />}>
           <Route path='/roadmap'  element={<Stages />} />
           <Route path='/roadmap/learning/:level/:type/:lesson/:course'  element={<LearningDashboard />} />
-        {/* </Route> */}
-        {/* <Route path='/' element={<LoggedInRoute />}> */}
+        </Route>
+        <Route path='/' element={<LoggedInRoute />}>
           <Route path='/login'  element={<Login />} />
           <Route path='/register'  element={<Register />} />
-        {/* </Route> */}
+        </Route>
       </Routes>
     </Router>
   </React.StrictMode>,
