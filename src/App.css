@@ -398,7 +398,7 @@ ul {
     height: 35vh;
     display: grid;
     gap: 15px;
-    grid-template-columns: 525px 660px;
+    grid-template-columns: 525px 690px;
 }
 .part2 {
     /* background-color: burlywood; */
@@ -467,8 +467,11 @@ ul {
 }
 .part4 {
     background-color: #F28705;
+    background-image: url("./assets/second.jpg");
+    background-position: center;
+    background-size: cover;
     height: 32vh;
-    border-radius: 20px;
+    border-radius: 50px;
 }
 /* _________________________________________________ */
 /* .about_container {
