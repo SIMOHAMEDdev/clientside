@@ -53,6 +53,10 @@ body {
     background-color: #F28705;
     color: #fff;
 }
+.current {
+    background-color: #F28705;
+    color: #fff;
+}
 .first_level {
     height: 4pc;
     width: 4pc;
@@ -214,7 +218,8 @@ label {
 }
 .progress_bar{
     width: 21pc;
-    height: 10px;
+    height: 2px;
+    height: 6px;
     background-color: bisque;
     border-radius: 5px;
 }

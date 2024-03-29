@@ -15,8 +15,8 @@ const Sidebar = ({route}) => {
     <div className='sidebar'>
         <img src={logo} alt="" className='side_logo'/>
         <div style={{textAlign: "center", display: "grid", gap: "30px"}}>
-            <IoMap className={map? 'sidebar-icon currentPage' : 'sidebar-icon'}/>
-            <FaBookReader className={learn? 'sidebar-icon currentPage' : 'sidebar-icon'}/>
+            <IoMap className={map? 'sidebar-icon currentPage' : 'sidebar-icon'} onClick={()=>{navigate("/roadmap")}}/>
+            <FaBookReader className={learn? 'sidebar-icon currentPage' : 'sidebar-icon'} onClick={()=>{navigate("/articles")}}/>
             <SiOpenvpn className={game? 'sidebar-icon currentPage' : 'sidebar-icon'}/>
         </div>
         <IoLogOut className='sidebar-icon' style={{position: "relative", bottom: "15px"}}/>

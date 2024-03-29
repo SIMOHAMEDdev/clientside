@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import Header from '../Components/Header'
 
+
 const Login = () => {
   const navigate = useNavigate();
 
@@ -15,7 +16,7 @@ const Login = () => {
   const sendInfo = async (e)=>{
     e.preventDefault()
     try {
-      let response = await axios.post('http://localhost:3000/user/login', {
+      let response = await axios.post('http://localhost:5000/user/login', {
         email: email,
         password: password
       })
@@ -25,7 +26,6 @@ const Login = () => {
       else {
         const data = response.data
         localStorage.setItem('token', data.token)
-        setUserData(data)
         localStorage.setItem('user_id', data.id)
         navigate('/roadmap')
         setEmail("")

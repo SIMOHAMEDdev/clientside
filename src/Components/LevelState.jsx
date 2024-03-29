@@ -1,25 +1,47 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Arabic from "../Arabic.json"
 import { HiPlay } from "react-icons/hi2";
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const LevelState = ({ active, level }) => {
+  const [userData, setUserData] = useState([])
+  const userId = localStorage.getItem('user_id')
   const navigate = useNavigate()
 
-    const data = Arabic
+  const data = Arabic
+
+  useEffect(()=>{
+    const update = async () => {
+      try {
+        const response = await axios.get(`http://localhost:5000/user/getuserdata/${userId}`)
+        if(response){
+          // calculateAnswered(response.data)
+          setUserData(response.data.data)
+        }
+      } catch (error) {
+        console.error(error)
+      }
+    }
+    update()
+  })
+
+  
+
   return (
     <div className={active ? 'levelstate active' : 'levelstate'}>
         <h1>:المستوى {level}</h1><br />
         <section>
-            {Object.keys(data).map((key)=>{
+            {userData && Object.keys(userData).map((key)=>{
                 if(key === level){
-                  return Object.keys(data[key]).map((lesson, index)=>{
+                  return Object.keys(userData[key]).map((lesson, index)=>{
                   return (<div className='fadeInDown'  key={index}>
-                  <label className='lesson fadeInDown'>{lesson} <HiPlay onClick={()=>{navigate(`/roadmap/learning/${data[key][lesson].type}/${data[key][lesson].lesson}`)}} className='play_btn'/></label>
+                  <label className='lesson fadeInDown'>{lesson} <HiPlay onClick={()=>{navigate(`/roadmap/learning/${level}/${userData[key][lesson].type}/${userData[key][lesson].lesson}/${lesson}`)}} className='play_btn'/></label>
                     <p className='fadeInDown'
                     style={{fontSize: "20px", margin: "10px 0", display: "flex", alignItems: "center", justifyContent:"space-between"}}
-                    >{data[key][lesson].title} <span>{data[key][lesson].progress}</span></p>
-                    <div className="progress_bar fadeInDown"><div className="progress progress.animated" style={{width: data[key][lesson].width_progress}}></div></div>
+                    >{userData[key][lesson].title} <span>{userData[key][lesson].progress}</span>
+                    </p>
+                    <div className="progress_bar fadeInDown"><div className="progress progress.animated" style={{width: userData[key][lesson].width_progress}}></div></div>
                     </div> )
                 })}else{
                   return null

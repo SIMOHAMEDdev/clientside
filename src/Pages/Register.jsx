@@ -3,6 +3,10 @@ import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import axios from 'axios'
 import Header from '../Components/Header'
+import numbers from '../data/numbers.json'
+import letters from '../data/data.json'
+import words from '../data/data.json'
+import data from '../Arabic.json'
 
 const Register = () => {
   const navigate = useNavigate()
@@ -15,11 +19,15 @@ const Register = () => {
   const sendInfos = async (e)=>{
     e.preventDefault()
     try {
-      const response = await axios.post('http://localhost:3000/user/register', {
+      const response = await axios.post('http://localhost:5000/user/register', {
         name: name,
         email : email,
         password : password,
-        notion : notion
+        numbers: numbers,
+        letters: letters,
+        data: data,
+        words: words,
+        score: 0
       })
       if(response){
         console.log("User registered successfully")

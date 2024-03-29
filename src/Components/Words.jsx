@@ -1,13 +1,14 @@
 import React, {useState, useEffect} from 'react'
-import numbers from '../data/numbers.json'
+import words from '../data/moves_data.json'
 import { IoClose, IoCheckmark } from "react-icons/io5";
 import Video from '../VideoComponent.jsx';
 import { useNavigate, useParams } from 'react-router-dom';
 import Arabic from '../Arabic.json'
 import axios from 'axios';
 
-const Numbers = ({lesson, userData, data, level}) => {
-    const [Data, setData] = useState(userData.data)
+
+const Words = ({lesson, level, userData, data}) => {
+    // const [Data, setData] = useState(userData.data)
     const [currentLetterIndex, setCurrentLetterIndex] = useState(0);
     const [wrong, setWrong] = useState(null)
     const [correct, setCorrect] = useState(null)
@@ -19,21 +20,20 @@ const Numbers = ({lesson, userData, data, level}) => {
     const [jsonData, setJsonData] = useState([])
     const userId = localStorage.getItem('user_id')
     const {course} = useParams()
-    
-    // const calculateAnswered = (data) => {
-    //   const correct = []
-    //       for(let i = 0 ; i < jsonData[lesson - 1].length ; i++){
-    //         const status = jsonData[lesson - 1][i].status
-    //         if(status){
-    //           correct.push(status)
-    //         }
-    //       }
-    //     data[level][course].progress = data[level][course].progress.replace(/^\d+(?=\/)/, correct.length)
-    //     setData(data)
-    //   }
 
-      
-      const checkResponse = async (clicked, answer)=> {
+    const calculateAnswered = (data) => {
+        const correct = []
+            for(let i = 0 ; i < jsonData[lesson - 1].length ; i++){
+              const status = jsonData[lesson - 1][i].status
+              if(status){
+                correct.push(status)
+              }
+            }
+          data[level][course].progress = data[level][course].progress.replace(/^\d+(?=\/)/, correct.length)
+        //   setData(data)
+    }
+
+    const checkResponse = async (clicked, answer)=> {
         const newData = [...data]
         if(clicked === answer){
           newData[lesson - 1][currentLetterIndex].status = true
@@ -49,24 +49,6 @@ const Numbers = ({lesson, userData, data, level}) => {
         setJsonData(newData)
       }
 
-      const calculateAnswered = async (data) => {
-        const correct = []
-        var newData = []
-            for(let i = 0 ; i < jsonData[lesson - 1].length ; i++){
-              const status = jsonData[lesson - 1][i].status
-              if(status){
-                correct.push(status)
-              }
-            }
-            // console.log(data[level])
-          data[level][course].progress = data[level][course].progress.replace(/^\d+(?=\/)/, correct.length)
-          newData = data
-          const response = await axios.put(`http://localhost:5000/user/putnumbers/${userId}`, 
-              { letters: jsonData, 
-                data: newData
-              })
-        }
-
       useEffect( ()=>{
         const fnc = async () => {
           if(next){
@@ -76,21 +58,16 @@ const Numbers = ({lesson, userData, data, level}) => {
               calculateAnswered(userData.data)
               setCurrentLetterIndex(currentLetterIndex + 1);
               setNext(false)
-          // const response = await axios.put(`http://localhost:5000/user/putnumbers/${userId}`, 
-          // {numbers: jsonData, data: Data})
+        //   const response = await axios.put(`http://localhost:5000/user/putnumbers/${userId}`, 
+        //   {numbers: jsonData, data: Data})
         }
       }
         fnc()
       }, [lesson, currentLetterIndex, next])
-    
-      
-      // console.log(currentLetter)
 
   return (
     <div className='game_template'>
-            {lesson < 2 ? <div className='img_comtainer'>
-              <img src={`${currentLetter.image_path}`} alt="" className='sign_img'/>
-            </div> : <Video video={currentLetter.image_path}/>}
+            <Video video={currentLetter.image_path}/>
             <section className='ul_choices1'>
                 <h6  style={{margin: "0"}}>{currentLetter.choise}</h6>
                 <div style={{display: "flex", gap: '30px'}}>
@@ -104,4 +81,4 @@ const Numbers = ({lesson, userData, data, level}) => {
   )
 }
 
-export default Numbers
+export default Words
