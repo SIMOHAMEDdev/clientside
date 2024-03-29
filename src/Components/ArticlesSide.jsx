@@ -9,11 +9,12 @@ const ArticlesSide = ({route}) => {
     const navigate = useNavigate()
     
   return (
-    <div className='header' >
+    <div className='articles_side' >
+            <h1>Articles</h1>
             <ul className='ul_header' style={{display: "flex", flexDirection: "column"}}>
-                <Link style={{textDecoration: "none", color: "rgb(21, 21, 21)"}} to={"/a1"}><li>Article 1</li></Link>
-                <Link style={{textDecoration: "none", color: "rgb(21, 21, 21)"}} to={"/a2"}><li>Article 2</li></Link>
-                <Link style={{textDecoration: "none", color: "rgb(21, 21, 21)"}} to={"/a3"}><li>Article 3</li></Link>
+                <Link style={{textDecoration: "none", color: "rgb(21, 21, 21)"}}><li>Article 1</li></Link>
+                <Link style={{textDecoration: "none", color: "rgb(21, 21, 21)"}}><li>Article 2</li></Link>
+                <Link style={{textDecoration: "none", color: "rgb(21, 21, 21)"}}><li>Article 3</li></Link>
             </ul>
     </div>
   )

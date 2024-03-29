@@ -19,19 +19,6 @@ const Numbers = ({lesson, userData, data, level}) => {
     const [jsonData, setJsonData] = useState([])
     const userId = localStorage.getItem('user_id')
     const {course} = useParams()
-    
-    // const calculateAnswered = (data) => {
-    //   const correct = []
-    //       for(let i = 0 ; i < jsonData[lesson - 1].length ; i++){
-    //         const status = jsonData[lesson - 1][i].status
-    //         if(status){
-    //           correct.push(status)
-    //         }
-    //       }
-    //     data[level][course].progress = data[level][course].progress.replace(/^\d+(?=\/)/, correct.length)
-    //     setData(data)
-    //   }
-
       
       const checkResponse = async (clicked, answer)=> {
         const newData = [...data]

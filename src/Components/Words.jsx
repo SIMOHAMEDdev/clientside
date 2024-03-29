@@ -21,8 +21,9 @@ const Words = ({lesson, level, userData, data}) => {
     const userId = localStorage.getItem('user_id')
     const {course} = useParams()
 
-    const calculateAnswered = (data) => {
+    const calculateAnswered = async (data) => {
         const correct = []
+        var newData = []
             for(let i = 0 ; i < jsonData[lesson - 1].length ; i++){
               const status = jsonData[lesson - 1][i].status
               if(status){
@@ -30,7 +31,11 @@ const Words = ({lesson, level, userData, data}) => {
               }
             }
           data[level][course].progress = data[level][course].progress.replace(/^\d+(?=\/)/, correct.length)
-        //   setData(data)
+          newData = data
+          const response = await axios.put(`http://localhost:5000/user/putwords/${userId}`, 
+              { words: jsonData, 
+                data: newData
+              })
     }
 
     const checkResponse = async (clicked, answer)=> {
@@ -38,12 +43,12 @@ const Words = ({lesson, level, userData, data}) => {
         if(clicked === answer){
           newData[lesson - 1][currentLetterIndex].status = true
           console.log("Correct!")
-          alert("Thats right the answer is: " + currentLetter.number)
+          alert("Thats right the answer is: " + currentLetter.answer)
           setNext(true)
         }else if(clicked !== answer){
           newData[lesson - 1][currentLetterIndex].status = false
           console.log("Wrong!")
-          alert("the answer is: " + currentLetter.number)
+          alert("the answer is: " + currentLetter.answer)
           setNext(true)
         }
         setJsonData(newData)
@@ -52,7 +57,7 @@ const Words = ({lesson, level, userData, data}) => {
       useEffect( ()=>{
         const fnc = async () => {
           if(next){
-          if(currentLetterIndex === numbers[lesson - 1].length - 1){
+          if(currentLetterIndex === words[lesson - 1].length - 1){
               navigate('/roadmap')
             }
               calculateAnswered(userData.data)
@@ -69,7 +74,7 @@ const Words = ({lesson, level, userData, data}) => {
     <div className='game_template'>
             <Video video={currentLetter.image_path}/>
             <section className='ul_choices1'>
-                <h6  style={{margin: "0"}}>{currentLetter.choise}</h6>
+                <h6  style={{margin: "0", fontSize: "26px"}}>{currentLetter.move}</h6>
                 <div style={{display: "flex", gap: '30px'}}>
                     <IoClose className='choose_btn' onClick={()=>{setClicked(false)
                     checkResponse(false, currentLetter.isCorrect)}} />

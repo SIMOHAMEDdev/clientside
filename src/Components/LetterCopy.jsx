@@ -32,15 +32,16 @@ const Letters = ({ lesson, userData, data, level }) => {
     //           test.push(obj)
     //         }
     //       })
-    //       setCurrent(test[currentLetterIndex])
-    //       setIndexless(test)
-    //       // if (!clicked) {
-            
-    //       // }
-    //       calculateAnswered(userData.data)
-    //     }
-    //     // console.log(current)
-    //     // generateOptions(current.letter, arr);
+    //       if(test.length === 0){
+    //         navigate('/roadmap')
+    //       }else{
+    //         setCurrent(test[currentLetterIndex])
+    //         setIndexless(test)
+    //         // calculateAnswered(userData.data)
+    //       console.log(test)
+    //       generateOptions(test[currentLetterIndex].letter, arr);
+    //       }
+    //   }
     //   }
     //   filter()
     // }, [received, currentLetterIndex])
@@ -93,7 +94,6 @@ const Letters = ({ lesson, userData, data, level }) => {
           //   if(obj.letter === current.letter){
           //     obj.status = true
           //   }
-            
           // })
           console.log("Correct!")
           setIsCorrect(true)
@@ -103,6 +103,11 @@ const Letters = ({ lesson, userData, data, level }) => {
           
         }else{
           newData[lesson - 1][currentLetterIndex].status = false
+          // newData[lesson - 1].map((obj)=>{
+          //   if(obj.letter === current.letter){
+          //     obj.status = false
+          //   }
+          // })
           console.log("Wrong!")
           setIsCorrect(false)
           setWrong(index)
@@ -128,7 +133,16 @@ const Letters = ({ lesson, userData, data, level }) => {
               { letters: jsonData, 
                 data: newData
               })
-          // console.log(correct)
+              // generateOptions(current.letter, arr);
+              // if(currentLetterIndex + 1 === indexless.indexOf(indexless[indexless.length - 1])){
+              //   navigate('/roadmap')
+              // }
+              // if(indexless.length > currentLetterIndex + 1){
+              //   setCurrentLetterIndex(currentLetterIndex + 1);
+              // }else{
+              //   navigate('/roadmap')
+              // }
+              // console.log(correct)
         }
     
       useEffect(()=>{
@@ -139,16 +153,19 @@ const Letters = ({ lesson, userData, data, level }) => {
               generateOptions(currentLetter.letter, arr);
             }
             if(next){
-            //   if(currentLetterIndex === data[lesson - 1].length - 1){
-            //   navigate('/roadmap')
-            // }
+              if(currentLetterIndex === indexless.length - 1){
+              navigate('/roadmap')
+            }
             calculateAnswered(userData.data)
             setTimeout(async ()=>{
               await setCorrect(null)
               await setWrong(null)
-              if(currentLetterIndex === data[lesson - 1].length - 1){
-                navigate('/roadmap')
-              }
+              // calculateAnswered(userData.data)
+              // if(indexless.length > currentLetterIndex + 1){
+              //   setCurrentLetterIndex(currentLetterIndex + 1);
+              // }else{
+              //   navigate('/roadmap')
+              // }
               setCurrentLetterIndex(currentLetterIndex + 1);
               setNext(false)
               setClicked(false)
