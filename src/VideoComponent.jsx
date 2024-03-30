@@ -1,4 +1,4 @@
-import React, { useState, useRef, useeffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 const Video = ({video}) => {
   const [playing, setPlaying] = useState(false);
