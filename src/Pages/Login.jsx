@@ -16,7 +16,7 @@ const Login = () => {
   const sendInfo = async (e)=>{
     e.preventDefault()
     try {
-      let response = await axios.post('https://harlequin-squid-hem.cyclic.app/user/login', {
+      let response = await axios.post('http://localhost:5000/user/login', {
         email: email,
         password: password
       })
