@@ -4,6 +4,7 @@ import Numbers from '../Components/Numbers'
 import axios from 'axios'
 import Letters from '../Components/Letters'
 import Words from '../Components/Words'
+import Sidebar from '../Components/Sidebar'
 
 const LearningDashboard = () => {
     const userId = localStorage.getItem('user_id')
@@ -32,10 +33,13 @@ const LearningDashboard = () => {
   }, [])
   
   return (
-    <div style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
-        {type === 'letter' && (<Letters lesson={lesson} userData={data} data={letters} level={level}/>)}
-        {type === "number" && (<Numbers lesson={lesson} userData={data} data={numbers} level={level}/>)}
-        {type === "word" && (<Words lesson={lesson} level={level} userData={data} data={words}/>)}
+    <div style={{display: 'flex'}}>
+      <Sidebar />
+      <div style={{display: "flex", justifyContent: "center", alignItems: "center", marginLeft: '24%'}}>
+          {type === 'letter' && (<Letters lesson={lesson} userData={data} data={letters} level={level}/>)}
+          {type === "number" && (<Numbers lesson={lesson} userData={data} data={numbers} level={level}/>)}
+          {type === "word" && (<Words lesson={lesson} level={level} userData={data} data={words}/>)}
+      </div>
     </div>
   )
 }

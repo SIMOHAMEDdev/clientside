@@ -5,6 +5,7 @@ import Video from '../VideoComponent.jsx';
 import { useNavigate, useParams } from 'react-router-dom';
 import Arabic from '../Arabic.json'
 import axios from 'axios';
+import { RiseLoader } from 'react-spinners';
 
 const Numbers = ({lesson, userData, data, level}) => {
     const [Data, setData] = useState(userData.data)
@@ -75,7 +76,7 @@ const Numbers = ({lesson, userData, data, level}) => {
 
   return (
     <div className='game_template'>
-            {lesson < 2 ? <div className='img_comtainer'>
+            {received ? <>{lesson < 2 ? <div className='img_comtainer'>
               <img src={`${currentLetter.image_path}`} alt="" className='sign_img'/>
             </div> : <Video video={currentLetter.image_path}/>}
             <section className='ul_choices1'>
@@ -86,7 +87,7 @@ const Numbers = ({lesson, userData, data, level}) => {
                     <IoCheckmark className='choose_btn' onClick={()=>{setClicked(true)
                     checkResponse(true, currentLetter.isCorrect)}} />
                 </div>
-            </section>
+            </section></> : <RiseLoader color="#F28705"/>}
     </div>
   )
 }

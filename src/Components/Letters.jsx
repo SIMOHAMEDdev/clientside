@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import dataa from "../data/data.json"
 import axios from 'axios'
+import { RiseLoader } from 'react-spinners'
 
 const Letters = ({ lesson, userData, data, level }) => {
     const [Data, setData] = useState(userData.data)
@@ -161,8 +162,7 @@ const Letters = ({ lesson, userData, data, level }) => {
 
   return (
     <div className='game_template'>
-        {/* {!currentLetter.status ? (<> */}
-        <div className='img_comtainer'>
+        {received ? <><div className='img_comtainer'>
             <img src={`/${currentLetter.image_path}`} alt="" className='sign_img'/>
         </div>
         <section className='ul_choices'>
@@ -171,8 +171,7 @@ const Letters = ({ lesson, userData, data, level }) => {
                     onClick={(e)=>{!clicked ?checkResponse(e, currentLetter.letter, index, letters.indexOf(currentLetter.letter)) : null}}
                 >{letter}</p>
             ))}
-        </section> 
-        {/* </>) : setCurrentLetterIndex(currentLetterIndex + 1)} */}
+        </section></> : <RiseLoader color="#F28705"/>}
     </div>
   )
 }

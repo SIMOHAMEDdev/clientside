@@ -5,6 +5,7 @@ import Video from '../VideoComponent.jsx';
 import { useNavigate, useParams } from 'react-router-dom';
 import Arabic from '../Arabic.json'
 import axios from 'axios';
+import { RiseLoader } from 'react-spinners';
 
 
 const Words = ({lesson, level, userData, data}) => {
@@ -72,6 +73,7 @@ const Words = ({lesson, level, userData, data}) => {
 
   return (
     <div className='game_template'>
+            {received ? <>
             <Video video={currentLetter.image_path}/>
             <section className='ul_choices1'>
                 <h6  style={{margin: "0", fontSize: "26px"}}>{currentLetter.move}</h6>
@@ -82,6 +84,7 @@ const Words = ({lesson, level, userData, data}) => {
                     checkResponse(true, currentLetter.isCorrect)}} />
                 </div>
             </section>
+            </> : <RiseLoader color="#F28705"/>}
     </div>
   )
 }
