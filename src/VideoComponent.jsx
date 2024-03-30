@@ -1,17 +1,19 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useeffect } from 'react';
 
 const Video = ({video}) => {
   const [playing, setPlaying] = useState(false);
   const videoRef = useRef(null);
 
-  const handleReplay = () => {
-    if (videoRef.current) {
-      videoRef.current.currentTime = 0;
-      videoRef.current.play();
-      setPlaying(true);
-    }
-  };
-
+  useEffect(()=>{
+    const handleReplay = () => {
+      if (videoRef.current) {
+        videoRef.current.currentTime = 0;
+        videoRef.current.play();
+        setPlaying(true);
+      }
+    };
+    handleReplay()
+  }, [])
   const handleVideoClick = () => {
     if (videoRef.current) {
       if (videoRef.current.paused) {
@@ -36,7 +38,7 @@ const Video = ({video}) => {
         className='video'
         muted
       />
-        <button onClick={!playing ? handleReplay : null }>Play</button>
+{/*         <button onClick={!playing ? handleReplay : null }>Play</button> */}
     </div>
   )
 }
