@@ -48,7 +48,7 @@ const Numbers = ({lesson, userData, data, level}) => {
             // console.log(data[level])
           data[level][course].progress = data[level][course].progress.replace(/^\d+(?=\/)/, correct.length)
           newData = data
-          const response = await axios.put(`http://localhost:5000/user/putnumbers/${userId}`, 
+          const response = await axios.put(`https://uptight-gold-vestments.cyclic.app/user/putnumbers/${userId}`, 
               { letters: jsonData, 
                 data: newData
               })
