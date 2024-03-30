@@ -14,7 +14,7 @@ const LevelState = ({ active, level }) => {
   useEffect(()=>{
     const update = async () => {
       try {
-        const response = await axios.get(`https://harlequin-squid-hem.cyclic.app/user/getuserdata/${userId}`)
+        const response = await axios.get(`http://localhost:5000/user/getuserdata/${userId}`)
         if(response){
           // calculateAnswered(response.data)
           setUserData(response.data.data)
