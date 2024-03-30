@@ -57,6 +57,7 @@ const Words = ({lesson, level, userData, data}) => {
 
       useEffect( ()=>{
         const fnc = async () => {
+          console.log(data)
           if(next){
           if(currentLetterIndex === words[lesson - 1].length - 1){
               navigate('/roadmap')
@@ -74,14 +75,14 @@ const Words = ({lesson, level, userData, data}) => {
   return (
     <div className='game_template'>
             {received ? <>
-            <Video video={currentLetter.image_path}/>
+            <Video video={currentLetter?.image_path}/>
             <section className='ul_choices1'>
-                <h6  style={{margin: "0", fontSize: "26px"}}>{currentLetter.move}</h6>
+                <h6  style={{margin: "0", fontSize: "26px"}}>{currentLetter?.move}</h6>
                 <div style={{display: "flex", gap: '30px'}}>
                     <IoClose className='choose_btn' onClick={()=>{setClicked(false)
-                    checkResponse(false, currentLetter.isCorrect)}} />
+                    checkResponse(false, currentLetter?.isCorrect)}} />
                     <IoCheckmark className='choose_btn' onClick={()=>{setClicked(true)
-                    checkResponse(true, currentLetter.isCorrect)}} />
+                    checkResponse(true, currentLetter?.isCorrect)}} />
                 </div>
             </section>
             </> : <RiseLoader color="#F28705"/>}

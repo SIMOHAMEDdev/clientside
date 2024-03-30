@@ -19,17 +19,17 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Router>
       <Routes>
         <Route exact path='/'  element={<App />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/goals' element={<Goals />} />
-        <Route path='/FAQs' element={<FAQs />} />
-        <Route path='/articles' element={<Articles />} />
+        <Route exact path='/about' element={<About />} />
+        <Route exact path='/goals' element={<Goals />} />
+        <Route exact path='/FAQs' element={<FAQs />} />
+        <Route exact path='/articles' element={<Articles />} />
         <Route path='/' element={<ProtectedRoute />}>
-          <Route path='/roadmap'  element={<Stages />} />
-          <Route path='/roadmap/learning/:level/:type/:lesson/:course'  element={<LearningDashboard />} />
+          <Route exact path='/roadmap'  element={<Stages />} />
+          <Route exact path='/roadmap/learning/:level/:type/:lesson/:course'  element={<LearningDashboard />} />
         </Route>
         <Route path='/' element={<LoggedInRoute />}>
-          <Route path='/login'  element={<Login />} />
-          <Route path='/register'  element={<Register />} />
+          <Route exact path='/login'  element={<Login />} />
+          <Route exact path='/register'  element={<Register />} />
         </Route>
       </Routes>
     </Router>
