@@ -19,7 +19,7 @@ const Register = () => {
   const sendInfos = async (e)=>{
     e.preventDefault()
     try {
-      const response = await axios.post('http://localhost:5000/user/register', {
+      const response = await axios.post('https://uptight-gold-vestments.cyclic.app/user/register', {
         name: name,
         email : email,
         password : password,
