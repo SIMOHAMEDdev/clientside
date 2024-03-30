@@ -5,7 +5,7 @@ import axios from 'axios'
 import Header from '../Components/Header'
 import numbers from '../data/numbers.json'
 import letters from '../data/data.json'
-import words from '../data/data.json'
+import words from '../data/moves_data.json'
 import data from '../Arabic.json'
 
 const Register = () => {
@@ -41,6 +41,7 @@ const Register = () => {
       }
 
     } catch (error) {
+      alert("Error")
       console.error("sign up failed: ", error.message)
     }
   }

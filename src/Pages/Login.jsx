@@ -32,6 +32,7 @@ const Login = () => {
         setPassword("")
       }
     } catch (error) {
+      alert('Error')
       console.error(error)
     }
   }
