@@ -32,7 +32,7 @@ const Words = ({lesson, level, userData, data}) => {
             }
           data[level][course].progress = data[level][course].progress.replace(/^\d+(?=\/)/, correct.length)
           newData = data
-          const response = await axios.put(`https://eshara-backaend.cyclic.app/user/putwords/${userId}`, 
+          const response = await axios.put(`https://uptight-gold-vestments.cyclic.app/user/putwords/${userId}`, 
               { words: jsonData, 
                 data: newData
               })
