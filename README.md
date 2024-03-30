@@ -6,7 +6,7 @@ Please visit the website below:
 
 https://eshaara.netlify.app/
 
-# wE RAN INTO A LITTLE PROBLEM IN THE END AND WE COULDN'T DEPLOY THE BACKEND AND WE COULDN'T FINISH THE DEMO PROPERLY
+# WE RAN INTO A LITTLE PROBLEM IN THE END AND WE COULDN'T DEPLOY THE BACKEND AND WE COULDN'T FINISH THE DEMO PROPERLY
 
 So to use eshaara you have to clone the backend repository and run it locally
 
