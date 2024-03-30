@@ -33,7 +33,7 @@ const Words = ({lesson, level, userData, data}) => {
             }
           data[level][course].progress = data[level][course].progress.replace(/^\d+(?=\/)/, correct.length)
           newData = data
-          const response = await axios.put(`https://harlequin-squid-hem.cyclic.app/user/putwords/${userId}`, 
+          const response = await axios.put(`http://localhost:5000/user/putwords/${userId}`, 
               { words: jsonData, 
                 data: newData
               })
