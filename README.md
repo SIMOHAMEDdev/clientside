@@ -2,7 +2,7 @@
 
 A fun way to learn Arabic Sign Language.
 
-Please visit the website to check our Eshara app:
+Please visit the website below:
 
 https://eshaara.netlify.app/
 
