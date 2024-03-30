@@ -124,7 +124,7 @@ const Letters = ({ lesson, userData, data, level }) => {
             }
           data[level][course].progress = data[level][course].progress.replace(/^\d+(?=\/)/, correct.length)
           newData = data
-          const response = await axios.put(`http://localhost:5000/user/putletters/${userId}`, 
+          const response = await axios.put(`https://uptight-gold-vestments.cyclic.app/user/putletters/${userId}`, 
               { letters: jsonData, 
                 data: newData
               })
