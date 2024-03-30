@@ -8,19 +8,19 @@ import Numbers from '../data/numbers.json'
 import axios from 'axios'
 
 const Stages = () => {
-  const userId = localStorage.getItem('user_id')
-  useEffect( ()=>{
-    const a = async() =>{try {
-      const response = await axios.put(`http://localhost:5000/user/putwords/${userId}`, 
-  //     // const response = await axios.put(`http://localhost:5000/user/putnumbers/${userId}`, 
-  //     //        {data: Data })
-  //           //  {numbers: Numbers })
-              Words)
-    } catch (error) {
+  // const userId = localStorage.getItem('user_id')
+  // useEffect( ()=>{
+  //   const a = async() =>{try {
+  //     const response = await axios.put(`http://localhost:5000/user/putwords/${userId}`, 
+  // //     // const response = await axios.put(`http://localhost:5000/user/putnumbers/${userId}`, 
+  // //     //        {data: Data })
+  // //           //  {numbers: Numbers })
+  //             Words)
+  //   } catch (error) {
       
-    }}
-    a()
-  }, [])
+  //   }}
+  //   a()
+  // }, [])
 
   return (
     <div className='stages'>
