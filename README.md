@@ -1,6 +1,6 @@
 # Eshara App Version 1
 
-A fun way to learn Arabic Sign Language.
+## A fun way to learn Arabic Sign Language.
 
 Please visit the website below:
 
