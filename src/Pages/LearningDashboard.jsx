@@ -16,7 +16,7 @@ const LearningDashboard = () => {
   useEffect(()=>{
     const getLetters = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/user/getuserdata/${userId}`)
+        const response = await axios.get(`https://uptight-gold-vestments.cyclic.app/user/getuserdata/${userId}`)
           const letrs = response.data.letters
         if(response){
           setLetters(letrs)
