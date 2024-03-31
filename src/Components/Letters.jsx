@@ -127,10 +127,10 @@ const Letters = ({ lesson, userData, data, level }) => {
             }
           data[level][course].progress = data[level][course].progress.replace(/^\d+(?=\/)/, correct.length)
           newData = data
-          const response = await supabase
-          .from('users')
-          .update({ data: newData, letters: jsonData })
-          .eq('email', email);
+          const response = await axios.put(`https://harlequin-squid-hem.cyclic.app/user/putletters/${userId}`, 
+              { letters: jsonData, 
+                data: newData
+              })
           // console.log(correct)
         }
     

@@ -27,20 +27,15 @@ const LevelState = ({ active, level }) => {
     //   }
     // }
     const update = async () => {
-        const { data, error } = await supabase
-        .from('users')
-        .select('*')
-        .eq('email', email)
-        .single();
-  
-        if(error){
-          console.log(error.error_description || error.message)
-        }else{
-          if (data) {
-            // console.log('User data:', data);
-            setUserData(data.data)
-          }
+      try {
+        const response = await axios.get(`https://harlequin-squid-hem.cyclic.app/user/getuserdata/${userId}`)
+        if(response){
+          // calculateAnswered(response.data)
+          setUserData(response.data.data)
         }
+      } catch (error) {
+        console.error(error)
+      }
     }
     update()
   })
