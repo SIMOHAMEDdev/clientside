@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
+import { supabase } from '../SupabaseClient'
 import Numbers from '../Components/Numbers'
 import axios from 'axios'
 import Letters from '../Components/Letters'
@@ -8,6 +9,7 @@ import Sidebar from '../Components/Sidebar'
 
 const LearningDashboard = () => {
     const userId = localStorage.getItem('user_id')
+    const email = localStorage.getItem('email')
     const [letters, setLetters] = useState([])
     const [numbers, setNumbers] = useState([])
     const [words, setWords] = useState([])
@@ -15,18 +17,35 @@ const LearningDashboard = () => {
     const {level, type, lesson} = useParams()
 
   useEffect(()=>{
+    // const getLetters = async () => {
+    //   try {
+    //     const response = await axios.get(`http://localhost:5000/user/getuserdata/${userId}`)
+    //       const letrs = response.data.letters
+    //     if(response){
+    //       setLetters(letrs)
+    //       setNumbers(response.data.numbers)
+    //       setWords(response.data.words)
+    //       setData(response.data)
+    //     }
+    //   } catch (error) {
+    //     console.error(error)
+    //   }
+    // }
     const getLetters = async () => {
-      try {
-        const response = await axios.get(`https://harlequin-squid-hem.cyclic.app/user/getuserdata/${userId}`)
-          const letrs = response.data.letters
-        if(response){
-          setLetters(letrs)
-          setNumbers(response.data.numbers)
-          setWords(response.data.words)
-          setData(response.data)
-        }
-      } catch (error) {
-        console.error(error)
+      const { data, error } = await supabase
+      .from('users')
+      .select('*')
+      .eq('email', email)
+      .single();
+
+      if(error){
+        alert(error.error_description || error.message)
+      }else{
+        // console.log(data)
+        setLetters(data.letters)
+        setWords(data.words)
+        setNumbers(data.numbers)
+        setData(data)
       }
     }
     getLetters()

@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import dataa from "../data/data.json"
 import axios from 'axios'
 import { RiseLoader } from 'react-spinners'
+import { supabase } from '../SupabaseClient'
 
 const Letters = ({ lesson, userData, data, level }) => {
     const [Data, setData] = useState(userData.data)
@@ -19,6 +20,7 @@ const Letters = ({ lesson, userData, data, level }) => {
     const received = data.length === 0 ? false : true
     const navigate = useNavigate()
     const userId = localStorage.getItem('user_id')
+    const email = localStorage.getItem('email')
     const {course} = useParams()
     const currentLetter = received && data[lesson - 1][currentLetterIndex]
     const [current, setCurrent] = useState([])
@@ -125,10 +127,10 @@ const Letters = ({ lesson, userData, data, level }) => {
             }
           data[level][course].progress = data[level][course].progress.replace(/^\d+(?=\/)/, correct.length)
           newData = data
-          const response = await axios.put(`https://harlequin-squid-hem.cyclic.app/user/putletters/${userId}`, 
-              { letters: jsonData, 
-                data: newData
-              })
+          const response = await supabase
+          .from('users')
+          .update({ data: newData, letters: jsonData })
+          .eq('email', email);
           // console.log(correct)
         }
     

@@ -2,6 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { supabase } from '../SupabaseClient'
 import axios from 'axios'
 import Header from '../Components/Header'
 
@@ -13,29 +14,45 @@ const Login = () => {
   const [email,setEmail] = useState('')
   const [password,setPassword] = useState('')
 
-  const sendInfo = async (e)=>{
+  const sendInfo = async (e) => {
     e.preventDefault()
-    try {
-      let response = await axios.post('https://harlequin-squid-hem.cyclic.app/user/login', {
-        email: email,
-        password: password
-      })
-      if(!response){
-        alert("Invalid Email or Password")
+
+    let { error } = await supabase.auth.signInWithPassword({
+      email: email,
+      password: password
+    })
+    if(error){
+      alert(error.error_description || error.message)
+    }else{
+          localStorage.setItem('token', password)
+          localStorage.setItem('email', email)
+          navigate('/roadmap')
       }
-      else {
-        const data = response.data
-        localStorage.setItem('token', data.token)
-        localStorage.setItem('user_id', data.id)
-        navigate('/roadmap')
-        setEmail("")
-        setPassword("")
-      }
-    } catch (error) {
-      alert('Error')
-      console.error(error)
-    }
   }
+
+  // const sendInfo = async (e)=>{
+  //   e.preventDefault()
+  //   try {
+  //     let response = await axios.post('http://localhost:5000/user/login', {
+  //       email: email,
+  //       password: password
+  //     })
+  //     if(!response){
+  //       alert("Invalid Email or Password")
+  //     }
+  //     else {
+  //       const data = response.data
+  //       localStorage.setItem('token', data.token)
+  //       localStorage.setItem('user_id', data.id)
+  //       navigate('/roadmap')
+  //       setEmail("")
+  //       setPassword("")
+  //     }
+  //   } catch (error) {
+  //     alert('Error')
+  //     console.error(error)
+  //   }
+  // }
 
   const isLoggedIn = localStorage.getItem('token')
   

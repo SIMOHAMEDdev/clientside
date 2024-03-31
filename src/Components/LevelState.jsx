@@ -2,26 +2,45 @@ import React, { useState, useEffect } from 'react'
 import Arabic from "../Arabic.json"
 import { HiPlay } from "react-icons/hi2";
 import { useNavigate } from 'react-router-dom';
+import { supabase } from '../SupabaseClient'
+import { RiseLoader } from 'react-spinners';
 import axios from 'axios';
 
 const LevelState = ({ active, level }) => {
   const [userData, setUserData] = useState([])
   const userId = localStorage.getItem('user_id')
+  const email = localStorage.getItem('email')
   const navigate = useNavigate()
 
   const data = Arabic
 
   useEffect(()=>{
+    // const update = async () => {
+    //   try {
+    //     const response = await axios.get(`http://localhost:5000/user/getuserdata/${userId}`)
+    //     if(response){
+    //       // calculateAnswered(response.data)
+    //       setUserData(response.data.data)
+    //     }
+    //   } catch (error) {
+    //     console.error(error)
+    //   }
+    // }
     const update = async () => {
-      try {
-        const response = await axios.get(`https://harlequin-squid-hem.cyclic.app/user/getuserdata/${userId}`)
-        if(response){
-          // calculateAnswered(response.data)
-          setUserData(response.data.data)
+        const { data, error } = await supabase
+        .from('users')
+        .select('*')
+        .eq('email', email)
+        .single();
+  
+        if(error){
+          console.log(error.error_description || error.message)
+        }else{
+          if (data) {
+            // console.log('User data:', data);
+            setUserData(data.data)
+          }
         }
-      } catch (error) {
-        console.error(error)
-      }
     }
     update()
   })
@@ -32,7 +51,7 @@ const LevelState = ({ active, level }) => {
     <div className={active ? 'levelstate active' : 'levelstate'}>
         <h1>:المستوى {level}</h1><br />
         <section>
-            {userData && Object.keys(userData).map((key)=>{
+            {!userData.length ? Object.keys(userData).map((key)=>{
                 if(key === level){
                   return Object.keys(userData[key]).map((lesson, index)=>{
                   return (<div className='fadeInDown'  key={index}>
@@ -43,11 +62,8 @@ const LevelState = ({ active, level }) => {
                     </p>
                     <div className="progress_bar fadeInDown"><div className="progress progress.animated" style={{width: userData[key][lesson].width_progress}}></div></div>
                     </div> )
-                })}else{
-                  return null
-                }
-                // : null
-              })}
+                })} 
+              }) : <RiseLoader color='#fff'/>}
         </section>
     </div>
   )

@@ -6,7 +6,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import Arabic from '../Arabic.json'
 import axios from 'axios';
 import { RiseLoader } from 'react-spinners';
-
+import { supabase } from '../SupabaseClient'
 
 const Words = ({lesson, level, userData, data}) => {
     // const [Data, setData] = useState(userData.data)
@@ -20,6 +20,7 @@ const Words = ({lesson, level, userData, data}) => {
     const currentLetter= received && data[lesson - 1][currentLetterIndex];
     const [jsonData, setJsonData] = useState([])
     const userId = localStorage.getItem('user_id')
+    const email = localStorage.getItem('email')
     const {course} = useParams()
 
     const calculateAnswered = async (data) => {
@@ -33,10 +34,11 @@ const Words = ({lesson, level, userData, data}) => {
             }
           data[level][course].progress = data[level][course].progress.replace(/^\d+(?=\/)/, correct.length)
           newData = data
-          const response = await axios.put(`https://harlequin-squid-hem.cyclic.app/user/putwords/${userId}`, 
-              { words: jsonData, 
-                data: newData
-              })
+          const response = await supabase
+          .from('users')
+          .update({ data: newData, words: jsonData })
+          .eq('email', email);
+          // console.log(correct)
     }
 
     const checkResponse = async (clicked, answer)=> {

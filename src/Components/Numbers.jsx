@@ -6,6 +6,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import Arabic from '../Arabic.json'
 import axios from 'axios';
 import { RiseLoader } from 'react-spinners';
+import { supabase } from '../SupabaseClient';
 
 const Numbers = ({lesson, userData, data, level}) => {
     const [Data, setData] = useState(userData.data)
@@ -19,6 +20,7 @@ const Numbers = ({lesson, userData, data, level}) => {
     const currentLetter= received && data[lesson - 1][currentLetterIndex];
     const [jsonData, setJsonData] = useState([])
     const userId = localStorage.getItem('user_id')
+    const email = localStorage.getItem('email')
     const {course} = useParams()
       
       const checkResponse = async (clicked, answer)=> {
@@ -49,10 +51,10 @@ const Numbers = ({lesson, userData, data, level}) => {
             // console.log(data[level])
           data[level][course].progress = data[level][course].progress.replace(/^\d+(?=\/)/, correct.length)
           newData = data
-          const response = await axios.put(`https://harlequin-squid-hem.cyclic.app/user/putnumbers/${userId}`, 
-              { letters: jsonData, 
-                data: newData
-              })
+          const response = await supabase
+          .from('users')
+          .update({ data: newData, numbers: jsonData })
+          .eq('email', email);
         }
 
       useEffect( ()=>{
