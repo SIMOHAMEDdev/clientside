@@ -8,7 +8,6 @@ import numbers from '../data/numbers.json'
 import letters from '../data/data.json'
 import words from '../data/moves_data.json'
 import data from '../Arabic.json'
-// import { bcrypt } from 'bcrypt'
 
 const Register = () => {
   const navigate = useNavigate()
@@ -20,33 +19,56 @@ const Register = () => {
 
   const sendInfos = async (e) => {
     e.preventDefault()
-    try {
-      const response = await axios.post('https://harlequin-squid-hem.cyclic.app/user/register', {
-        name: name,
-        email : email,
-        password : password,
-        numbers: numbers,
-        letters: letters,
-        data: data,
-        words: words,
-        score: 0
-      })
-      if(response){
-        console.log("User registered successfully")
-        
-        localStorage.setItem('userName', name)
-
-        setEmail("")
-        setName("")
-        setPassword("")
-        navigate('/login')
-      }
-
-    } catch (error) {
-      alert("Error")
-      console.error("sign up failed: ", error.message)
+    let { data, error } = await supabase.auth.signUp({
+      name: name,
+      email: email,
+      password: password
+    })
+    if(error){
+      alert(error.error_description || error.message)
+    }else{
+      const { error } = await supabase
+      .from('users')
+      .insert([{
+        email: email
+      }])
+        if(error){
+          alert(error.error_description || error.message)
+        }else{
+          navigate('/login')
+        }
     }
   }
+
+  // const sendInfos = async (e)=>{
+  //   e.preventDefault()
+  //   try {
+  //     const response = await axios.post('http://localhost:5000/user/register', {
+  //       name: name,
+  //       email : email,
+  //       password : password,
+  //       numbers: numbers,
+  //       letters: letters,
+  //       data: data,
+  //       words: words,
+  //       score: 0
+  //     })
+  //     if(response){
+  //       console.log("User registered successfully")
+        
+  //       localStorage.setItem('userName', name)
+
+  //       setEmail("")
+  //       setName("")
+  //       setPassword("")
+  //       navigate('/login')
+  //     }
+
+  //   } catch (error) {
+  //     alert("Error")
+  //     console.error("sign up failed: ", error.message)
+  //   }
+  // }
   const isLoggedIn = localStorage.getItem('token')
   return (
     <div className='container'>

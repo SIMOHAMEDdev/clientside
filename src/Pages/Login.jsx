@@ -16,26 +16,18 @@ const Login = () => {
 
   const sendInfo = async (e) => {
     e.preventDefault()
-    try {
-      let response = await axios.post('https://harlequin-squid-hem.cyclic.app/user/login', {
-        email: email,
-        password: password
-      })
-      if(!response){
-        alert("Invalid Email or Password")
+
+    let { error } = await supabase.auth.signInWithPassword({
+      email: email,
+      password: password
+    })
+    if(error){
+      alert(error.error_description || error.message)
+    }else{
+          localStorage.setItem('token', password)
+          localStorage.setItem('email', email)
+          navigate('/roadmap')
       }
-      else {
-        const data = response.data
-        localStorage.setItem('token', data.token)
-        localStorage.setItem('user_id', data.id)
-        navigate('/roadmap')
-        setEmail("")
-        setPassword("")
-      }
-    } catch (error) {
-      alert('Error')
-      console.error(error)
-    }
   }
 
   const isLoggedIn = localStorage.getItem('token')

@@ -51,10 +51,10 @@ const Numbers = ({lesson, userData, data, level}) => {
             // console.log(data[level])
           data[level][course].progress = data[level][course].progress.replace(/^\d+(?=\/)/, correct.length)
           newData = data
-          const response = await axios.put(`https://harlequin-squid-hem.cyclic.app/user/putnumbers/${userId}`, 
-              { letters: jsonData, 
-                data: newData
-              })
+          const response = await supabase
+          .from('users')
+          .update({ data: newData, numbers: jsonData })
+          .eq('email', email)
         }
 
       useEffect( ()=>{

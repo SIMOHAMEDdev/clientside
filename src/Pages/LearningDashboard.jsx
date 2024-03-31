@@ -17,20 +17,6 @@ const LearningDashboard = () => {
     const {level, type, lesson} = useParams()
 
   useEffect(()=>{
-    // const getLetters = async () => {
-    //   try {
-    //     const response = await axios.get(`http://localhost:5000/user/getuserdata/${userId}`)
-    //       const letrs = response.data.letters
-    //     if(response){
-    //       setLetters(letrs)
-    //       setNumbers(response.data.numbers)
-    //       setWords(response.data.words)
-    //       setData(response.data)
-    //     }
-    //   } catch (error) {
-    //     console.error(error)
-    //   }
-    // }
     const getLetters = async () => {
       const { data, error } = await supabase
       .from('users')
@@ -41,7 +27,6 @@ const LearningDashboard = () => {
       if(error){
         alert(error.error_description || error.message)
       }else{
-        // console.log(data)
         setLetters(data.letters)
         setWords(data.words)
         setNumbers(data.numbers)
