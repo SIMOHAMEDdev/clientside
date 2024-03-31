@@ -14,6 +14,7 @@ const Sidebar = ({route}) => {
     const logout = ()=>{
       localStorage.removeItem('token')
       localStorage.removeItem('user_id')
+      localStorage.removeItem('email')
       navigate('/login')
   }
 
