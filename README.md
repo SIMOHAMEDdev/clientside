@@ -8,13 +8,15 @@ https://eshaara.netlify.app/
 
 # WE RAN INTO A LITTLE PROBLEM IN THE END AND WE COULDN'T DEPLOY THE BACKEND AND WE COULDN'T FINISH THE DEMO PROPERLY
 
-So to use eshaara you have to clone the backend repository and run it locally
+#So to use Eshaara click the link: https://eshaara.netlify.app/
 
-BACKEND:  https://github.com/SIMOHAMEDdev/serverside
+1-Click Play now
 
-```shell
-npm start
-```
+2-Create An account
+
+3-Verify the email
+
+4-Login
 
 To check the presentation:
 
