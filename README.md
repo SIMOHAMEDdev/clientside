@@ -12,6 +12,10 @@ So to use eshaara you have to clone the backend repository and run it locally
 
 BACKEND:  https://github.com/SIMOHAMEDdev/serverside
 
+```shell
+npm start
+```
+
 To check the presentation:
 
 https://www.youtube.com/watch?v=Z_mrpm7vvnc
