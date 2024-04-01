@@ -14,8 +14,6 @@ https://eshaara.netlify.app/
 
 2-Create An account
 
-3-Verify the email
-
 4-Login
 
 To check the presentation:
